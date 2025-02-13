@@ -1,0 +1,4747 @@
+[
+{
+"category": "Oracle Database",
+"metrics": [
+"Wait Events",
+"Buffer Cache Hit Ratio",
+"Redo Log Space Requests",
+"Physical Reads/Writes",
+"SQL Execution Times",
+"Library Cache Misses",
+"User I/O Waits",
+"DB Block Gets",
+"Latch Free Requests",
+"Rollback Segments Usage",
+"Instance Efficiency Percentages",
+"Active Sessions",
+"Temporary Tablespace Usage",
+"Undo Tablespace Usage",
+"CPU Usage by Oracle Processes",
+"Parallel Query Performance",
+"Network Traffic to Database",
+"Backup and Recovery Metrics",
+"Data Guard Lag",
+"ASM Disk Group Usage"
+],
+"cluster": {
+"Performance Metrics": [
+"Wait Events",
+"SQL Execution Times",
+"Parallel Query Performance"
+],
+"Cache and Memory": [
+"Buffer Cache Hit Ratio",
+"Library Cache Misses",
+"DB Block Gets"
+],
+"I/O Metrics": [
+"Physical Reads/Writes",
+"User I/O Waits",
+"Redo Log Space Requests"
+],
+"Session and Connection": [
+"Active Sessions"
+],
+"Tablespace Management": [
+"Temporary Tablespace Usage",
+"Undo Tablespace Usage"
+],
+"Resource Usage": [
+"CPU Usage by Oracle Processes"
+],
+"Backup and Recovery": [
+"Backup and Recovery Metrics",
+"Data Guard Lag"
+],
+"Storage Management": [
+"ASM Disk Group Usage"
+],
+"Locking and Latches": [
+"Latch Free Requests"
+],
+"Rollback Management": [
+"Rollback Segments Usage"
+],
+"Instance Efficiency": [
+"Instance Efficiency Percentages"
+],
+"Network Metrics": [
+"Network Traffic to Database"
+]
+},
+"attributes": {
+"Wait Events": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike",
+"wide downward spike"
+]
+}
+},
+"Buffer Cache Hit Ratio": {
+"unit": "percent",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after downward spike"
+]
+}
+},
+"Redo Log Space Requests": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after downward spike"
+]
+}
+},
+"Physical Reads/Writes": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"SQL Execution Times": {
+"unit": "millisecond",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"rapid rise followed by slow decline",
+"slow rise followed by rapid decline",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Library Cache Misses": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease"
+]
+}
+},
+"User I/O Waits": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"wide upward spike",
+"wide downward spike",
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"DB Block Gets": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Latch Free Requests": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"wide downward spike",
+"increase after downward spike"
+]
+}
+},
+"Rollback Segments Usage": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Instance Efficiency Percentages": {
+"unit": "percent",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Active Sessions": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Temporary Tablespace Usage": {
+"unit": "MB",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Undo Tablespace Usage": {
+"unit": "MB",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"keep steady",
+"increase",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike"
+]
+}
+},
+"CPU Usage by Oracle Processes": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Parallel Query Performance": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike"
+]
+}
+},
+"Network Traffic to Database": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Backup and Recovery Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after upward spike",
+"wide downward spike"
+]
+}
+},
+"Data Guard Lag": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike"
+]
+}
+},
+"ASM Disk Group Usage": {
+"unit": "percentage",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"increase after downward spike",
+"wide downward spike"
+]
+}
+}
+}
+},
+{
+"category": "Redis Database",
+"metrics": [
+"Memory Usage",
+"Cache Hits and Misses",
+"Keyspace Hits",
+"Connected Clients",
+"Commands Processed per Second",
+"Expired Keys",
+"Evicted Keys",
+"Replication Lag",
+"Persistence Metrics (RDB/AOF)",
+"CPU Usage",
+"Network Input/Output",
+"Slow Log Entries",
+"Blocked Clients",
+"Pub/Sub Messages",
+"Latency Percentiles",
+"Active Connections",
+"Cache Eviction Policies",
+"Memory Fragmentation",
+"Disk I/O for Persistence",
+"Cluster Slot Distribution"
+],
+"cluster": {
+"Memory Management": [
+"Memory Usage",
+"Memory Fragmentation"
+],
+"Cache Performance": [
+"Cache Hits and Misses",
+"Keyspace Hits",
+"Cache Eviction Policies"
+],
+"Client Metrics": [
+"Connected Clients",
+"Active Connections",
+"Blocked Clients"
+],
+"Command Metrics": [
+"Commands Processed per Second",
+"Pub/Sub Messages"
+],
+"Key Expiration": [
+"Expired Keys",
+"Evicted Keys"
+],
+"Replication Metrics": [
+"Replication Lag"
+],
+"Persistence Metrics": [
+"Persistence Metrics (RDB/AOF)",
+"Disk I/O for Persistence"
+],
+"Performance Metrics": [
+"CPU Usage",
+"Latency Percentiles",
+"Slow Log Entries"
+],
+"Network Metrics": [
+"Network Input/Output"
+],
+"Cluster Management": [
+"Cluster Slot Distribution"
+]
+},
+"attributes": {
+"Memory Usage": {
+"unit": "megabyte",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Cache Hits and Misses": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Keyspace Hits": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike",
+"wide downward spike"
+]
+}
+},
+"Connected Clients": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike",
+"wide downward spike"
+]
+}
+},
+"Commands Processed per Second": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"rapid rise followed by slow decline",
+"slow rise followed by rapid decline",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Expired Keys": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"decrease after downward spike"
+]
+}
+},
+"Evicted Keys": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Replication Lag": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"continuous upward spike",
+"sudden increase",
+"sudden decrease",
+"rapid rise followed by slow decline",
+"slow rise followed by rapid decline",
+"rapid decline followed by slow rise",
+"slow decline followed by rapid rise"
+]
+}
+},
+"Persistence Metrics (RDB/AOF)": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after downward spike",
+"wide downward spike"
+]
+}
+},
+"CPU Usage": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"downward spike",
+"upward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Network Input/Output": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"sudden decrease",
+"rapid rise followed by slow decline",
+"increase after downward spike"
+]
+}
+},
+"Slow Log Entries": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"rapid rise followed by slow decline",
+"slow rise followed by rapid decline",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Blocked Clients": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike",
+"wide downward spike"
+]
+}
+},
+"Pub/Sub Messages": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Latency Percentiles": {
+"unit": "millisecond",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Active Connections": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Cache Eviction Policies": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Memory Fragmentation": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Disk I/O for Persistence": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Cluster Slot Distribution": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after upward spike"
+]
+}
+}
+}
+},
+{
+"category": "Microservices",
+"metrics": [
+"Request Latency",
+"Error Rates",
+"Throughput (Requests per Second)",
+"Service Availability",
+"CPU and Memory Usage per Service",
+"Instance Count",
+"Deployment Metrics",
+"Container Restarts",
+"Service Dependency Latency",
+"API Gateway Metrics",
+"Circuit Breaker Status",
+"Service Mesh Traffic",
+"Rate Limiting Metrics",
+"Authentication Success/Failure Rates",
+"Request Size Distribution",
+"Response Size Distribution",
+"Database Call Metrics per Service",
+"External API Call Metrics",
+"Queue Depths",
+"Feature Flag Usage",
+"Version Deployment Metrics"
+],
+"cluster": {
+"Performance Metrics": [
+"Request Latency",
+"Error Rates",
+"Throughput (Requests per Second)",
+"Service Availability",
+"Service Dependency Latency",
+"API Gateway Metrics",
+"Circuit Breaker Status"
+],
+"Resource Utilization": [
+"CPU and Memory Usage per Service",
+"Instance Count"
+],
+"Deployment Metrics": [
+"Deployment Metrics",
+"Version Deployment Metrics"
+],
+"Container Management": [
+"Container Restarts"
+],
+"Traffic Management": [
+"Service Mesh Traffic",
+"Rate Limiting Metrics"
+],
+"Authentication Metrics": [
+"Authentication Success/Failure Rates"
+],
+"Data Metrics": [
+"Database Call Metrics per Service",
+"External API Call Metrics",
+"Queue Depths"
+],
+"Request Metrics": [
+"Request Size Distribution",
+"Response Size Distribution"
+],
+"Feature Management": [
+"Feature Flag Usage"
+]
+},
+"attributes": {
+"Request Latency": {
+"unit": "milliseconds",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Error Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady"
+]
+},
+"noise": {
+"attributes": [
+"noisy"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Throughput (Requests per Second)": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation",
+"sin periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"upward spike",
+"downward spike",
+"wide upward spike",
+"wide downward spike",
+"increase after upward spike",
+"decrease after downward spike"
+]
+}
+},
+"Service Availability": {
+"unit": "hour",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"CPU and Memory Usage per Service": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike",
+"upward spike",
+"downward spike"
+]
+}
+},
+"Instance Count": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"square periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Deployment Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"increase after downward spike",
+"decrease after upward spike",
+"wide downward spike"
+]
+}
+},
+"Container Restarts": {
+"unit": "hour",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Service Dependency Latency": {
+"unit": "milliseconds",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"continuous upward spike",
+"continuous downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"API Gateway Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Circuit Breaker Status": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Service Mesh Traffic": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike"
+]
+}
+},
+"Rate Limiting Metrics": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike"
+]
+}
+},
+"Authentication Success/Failure Rates": {
+"unit": "percentage",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"increase after downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Request Size Distribution": {
+"unit": "byte",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Response Size Distribution": {
+"unit": "bytes",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Database Call Metrics per Service": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike",
+"wide downward spike"
+]
+}
+},
+"External API Call Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease"
+]
+}
+},
+"Queue Depths": {
+"unit": "seconds",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"increase after upward spike",
+"decrease after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Feature Flag Usage": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Version Deployment Metrics": {
+"unit": "hour",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+}
+}
+},
+{
+"category": "Kubernetes Cluster",
+"metrics": [
+"Node CPU Usage",
+"Node Memory Usage",
+"Pod CPU and Memory Usage",
+"Pod Restart Counts",
+"Container Image Pull Times",
+"Cluster Network Traffic",
+"API Server Latency",
+"etcd Metrics",
+"Scheduler Performance",
+"Controller Manager Metrics",
+"DaemonSet Status",
+"Deployment Rollout Status",
+"ReplicaSet Status",
+"Service Endpoint Counts",
+"Ingress Controller Metrics",
+"Persistent Volume Usage",
+"Namespace Resource Quotas",
+"Horizontal Pod Autoscaler Metrics",
+"Cluster Autoscaler Metrics",
+"Pod Eviction Rates",
+"Node Disk Pressure Metrics"
+],
+"cluster": {
+"Node Metrics": [
+"Node CPU Usage",
+"Node Memory Usage",
+"Node Disk Pressure Metrics"
+],
+"Pod Metrics": [
+"Pod CPU and Memory Usage",
+"Pod Restart Counts",
+"Pod Eviction Rates"
+],
+"Container Metrics": [
+"Container Image Pull Times"
+],
+"Network Metrics": [
+"Cluster Network Traffic"
+],
+"API Metrics": [
+"API Server Latency"
+],
+"Storage Metrics": [
+"Persistent Volume Usage"
+],
+"etcd Metrics": [
+"etcd Metrics"
+],
+"Scheduler Metrics": [
+"Scheduler Performance"
+],
+"Controller Metrics": [
+"Controller Manager Metrics"
+],
+"Deployment Metrics": [
+"DaemonSet Status",
+"Deployment Rollout Status",
+"ReplicaSet Status"
+],
+"Service Metrics": [
+"Service Endpoint Counts",
+"Ingress Controller Metrics"
+],
+"Resource Quotas": [
+"Namespace Resource Quotas"
+],
+"Autoscaler Metrics": [
+"Horizontal Pod Autoscaler Metrics",
+"Cluster Autoscaler Metrics"
+]
+},
+"attributes": {
+"Node CPU Usage": {
+"unit": "percentage",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Node Memory Usage": {
+"unit": "MB",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Pod CPU and Memory Usage": {
+"unit": "percent",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation",
+"sin periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease"
+]
+}
+},
+"Pod Restart Counts": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Container Image Pull Times": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Cluster Network Traffic": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"square periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"API Server Latency": {
+"unit": "millisecond",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"etcd Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"upward spike",
+"decrease after upward spike",
+"increase after downward spike",
+"wide downward spike"
+]
+}
+},
+"Scheduler Performance": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Controller Manager Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"DaemonSet Status": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"keep steady",
+"increase",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Deployment Rollout Status": {
+"unit": "percent",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after upward spike",
+"wide downward spike"
+]
+}
+},
+"ReplicaSet Status": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"keep steady",
+"decrease",
+"increase",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Service Endpoint Counts": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"square periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Ingress Controller Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike"
+]
+}
+},
+"Persistent Volume Usage": {
+"unit": "percent",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"wide downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Namespace Resource Quotas": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"keep steady",
+"decrease",
+"increase"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Horizontal Pod Autoscaler Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"increase after downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Cluster Autoscaler Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation",
+"sin periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"continuous upward spike",
+"continuous downward spike",
+"decrease after upward spike",
+"increase after downward spike",
+"wide downward spike"
+]
+}
+},
+"Pod Eviction Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Node Disk Pressure Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after upward spike"
+]
+}
+}
+}
+},
+{
+"category": "Web Servers",
+"metrics": [
+"Request Rates",
+"Error Rates (4xx, 5xx)",
+"Response Times",
+"Active Connections",
+"Bandwidth Usage",
+"CPU and Memory Usage",
+"Thread Counts",
+"Cache Hit/Miss Rates",
+"SSL Handshake Rates",
+"Request Size Distribution",
+"Response Size Distribution",
+"Uptime/Downtime",
+"Connection Timeouts",
+"Backend Server Latency",
+"Static vs Dynamic Content Served",
+"Rate Limiting Metrics",
+"Authentication Success/Failure Rates",
+"Redirection Rates",
+"Compression Rates",
+"Security Event Logs"
+],
+"cluster": {
+"Performance Metrics": [
+"Request Rates",
+"Response Times",
+"Backend Server Latency",
+"Request Size Distribution",
+"Response Size Distribution"
+],
+"Error Metrics": [
+"Error Rates (4xx, 5xx)",
+"Connection Timeouts"
+],
+"Connection Metrics": [
+"Active Connections",
+"Connection Timeouts"
+],
+"Bandwidth Metrics": [
+"Bandwidth Usage"
+],
+"Resource Utilization": [
+"CPU and Memory Usage",
+"Thread Counts"
+],
+"Cache Metrics": [
+"Cache Hit/Miss Rates"
+],
+"Security Metrics": [
+"SSL Handshake Rates",
+"Authentication Success/Failure Rates",
+"Security Event Logs"
+],
+"Content Metrics": [
+"Static vs Dynamic Content Served"
+],
+"Rate Limiting": [
+"Rate Limiting Metrics"
+],
+"Redirection Metrics": [
+"Redirection Rates"
+],
+"Compression Metrics": [
+"Compression Rates"
+],
+"Uptime Metrics": [
+"Uptime/Downtime"
+]
+},
+"attributes": {
+"Request Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"square periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Error Rates (4xx, 5xx)": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Response Times": {
+"unit": "millisecond",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Active Connections": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"increase after upward spike",
+"decrease after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Bandwidth Usage": {
+"unit": "megabyte",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"CPU and Memory Usage": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"upward spike",
+"downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Thread Counts": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease"
+]
+}
+},
+"Cache Hit/Miss Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after upward spike"
+]
+}
+},
+"SSL Handshake Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after downward spike"
+]
+}
+},
+"Request Size Distribution": {
+"unit": "byte",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Response Size Distribution": {
+"unit": "KB",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Uptime/Downtime": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike",
+"wide downward spike"
+]
+}
+},
+"Connection Timeouts": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Backend Server Latency": {
+"unit": "milliseconds",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation",
+"sin periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Static vs Dynamic Content Served": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike"
+]
+}
+},
+"Rate Limiting Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike"
+]
+}
+},
+"Authentication Success/Failure Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Redirection Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Compression Rates": {
+"unit": "percentage",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Security Event Logs": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+}
+}
+},
+{
+"category": "Application Performance",
+"metrics": [
+"Transaction Response Times",
+"Throughput",
+"Error Rates",
+"Apdex Scores",
+"Database Query Performance",
+"External Service Call Latency",
+"Garbage Collection Metrics",
+"Thread Pool Usage",
+"Memory Leaks Indicators",
+"Application Startup Time",
+"Feature Usage Metrics",
+"User Session Metrics",
+"API Rate Limits",
+"Queue Processing Times",
+"Background Job Metrics",
+"Cache Efficiency",
+"Dependency Health",
+"Code Deployment Metrics",
+"Feature Toggle Metrics",
+"Resource Utilization per Service"
+],
+"cluster": {
+"Performance Metrics": [
+"Transaction Response Times",
+"Throughput",
+"Error Rates",
+"Apdex Scores",
+"Database Query Performance",
+"External Service Call Latency",
+"API Rate Limits",
+"Queue Processing Times",
+"Background Job Metrics"
+],
+"Resource Utilization": [
+"Thread Pool Usage",
+"Resource Utilization per Service"
+],
+"Memory Management": [
+"Garbage Collection Metrics",
+"Memory Leaks Indicators"
+],
+"Startup Metrics": [
+"Application Startup Time"
+],
+"Feature Metrics": [
+"Feature Usage Metrics",
+"Feature Toggle Metrics"
+],
+"User Metrics": [
+"User Session Metrics"
+],
+"Cache Metrics": [
+"Cache Efficiency"
+],
+"Dependency Metrics": [
+"Dependency Health"
+],
+"Deployment Metrics": [
+"Code Deployment Metrics"
+]
+},
+"attributes": {
+"Transaction Response Times": {
+"unit": "milliseconds",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Throughput": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"increase after upward spike",
+"decrease after downward spike"
+]
+}
+},
+"Error Rates": {
+"unit": "percentage",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Apdex Scores": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Database Query Performance": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"External Service Call Latency": {
+"unit": "millisecond",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Garbage Collection Metrics": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"keep steady",
+"decrease",
+"increase",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"continuous upward spike",
+"continuous downward spike",
+"sudden increase",
+"sudden decrease"
+]
+}
+},
+"Thread Pool Usage": {
+"unit": "percentage",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Memory Leaks Indicators": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"decrease after downward spike"
+]
+}
+},
+"Application Startup Time": {
+"unit": "milliseconds",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Feature Usage Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"User Session Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"continuous upward spike",
+"sudden increase",
+"wide upward spike",
+"decrease after upward spike"
+]
+}
+},
+"API Rate Limits": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Queue Processing Times": {
+"unit": "millisecond",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Background Job Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike"
+]
+}
+},
+"Cache Efficiency": {
+"unit": "percentage",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"decrease"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Dependency Health": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Code Deployment Metrics": {
+"unit": "hour",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Feature Toggle Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after downward spike",
+"decrease after downward spike"
+]
+}
+},
+"Resource Utilization per Service": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"increase after downward spike",
+"wide downward spike"
+]
+}
+}
+}
+},
+{
+"category": "Network Infrastructure",
+"metrics": [
+"Bandwidth Utilization",
+"Packet Loss Rates",
+"Latency",
+"Jitter",
+"Error Rates",
+"Connection Counts",
+"Throughput",
+"Firewall Throughput",
+"VPN Usage Metrics",
+"DNS Query Rates",
+"Load Balancer Metrics",
+"Switch Port Utilization",
+"Router CPU/Memory Usage",
+"Intrusion Detection Events",
+"Traffic Shaping Metrics",
+"QoS Metrics",
+"Network Interface Errors",
+"TCP Connection States",
+"SSL/TLS Handshake Rates",
+"Wireless Access Point Usage",
+"Network Topology Changes"
+],
+"cluster": {
+"Performance Metrics": [
+"Bandwidth Utilization",
+"Latency",
+"Jitter",
+"Throughput",
+"Firewall Throughput",
+"Load Balancer Metrics",
+"QoS Metrics"
+],
+"Error Metrics": [
+"Packet Loss Rates",
+"Error Rates",
+"Network Interface Errors"
+],
+"Connection Metrics": [
+"Connection Counts",
+"TCP Connection States"
+],
+"Security Metrics": [
+"Intrusion Detection Events",
+"SSL/TLS Handshake Rates"
+],
+"VPN Metrics": [
+"VPN Usage Metrics"
+],
+"DNS Metrics": [
+"DNS Query Rates"
+],
+"Device Utilization": [
+"Switch Port Utilization",
+"Router CPU/Memory Usage",
+"Wireless Access Point Usage"
+],
+"Traffic Management": [
+"Traffic Shaping Metrics"
+],
+"Topology Metrics": [
+"Network Topology Changes"
+]
+},
+"attributes": {
+"Bandwidth Utilization": {
+"unit": "percentage",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Packet Loss Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Latency": {
+"unit": "millisecond",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"rapid rise followed by slow decline",
+"slow rise followed by rapid decline",
+"rapid decline followed by slow rise",
+"slow decline followed by rapid rise"
+]
+}
+},
+"Jitter": {
+"unit": "milliseconds",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Error Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"Connection Counts": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Throughput": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Firewall Throughput": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"VPN Usage Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"increase after upward spike",
+"decrease after downward spike"
+]
+}
+},
+"DNS Query Rates": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"sin periodic fluctuation",
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Load Balancer Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike"
+]
+}
+},
+"Switch Port Utilization": {
+"unit": "percent",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"decrease after upward spike",
+"increase after downward spike"
+]
+}
+},
+"Router CPU/Memory Usage": {
+"unit": "percent",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Intrusion Detection Events": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"rapid rise followed by slow decline",
+"rapid decline followed by slow rise",
+"wide downward spike"
+]
+}
+},
+"Traffic Shaping Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"decrease after upward spike"
+]
+}
+},
+"QoS Metrics": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"keep steady"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"decrease after upward spike"
+]
+}
+},
+"Network Interface Errors": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"wide downward spike"
+]
+}
+},
+"TCP Connection States": {
+"unit": "second",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"SSL/TLS Handshake Rates": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"decrease",
+"increase",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"downward spike",
+"sudden decrease",
+"rapid decline followed by slow rise",
+"increase after downward spike"
+]
+}
+},
+"Wireless Access Point Usage": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"keep steady",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"noisy",
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"upward spike",
+"downward spike",
+"sudden increase",
+"sudden decrease",
+"wide upward spike",
+"wide downward spike"
+]
+}
+},
+"Network Topology Changes": {
+"unit": "minute",
+"seasonal": {
+"attributes": [
+"no periodic fluctuation"
+]
+},
+"trend": {
+"attributes": [
+"increase",
+"decrease",
+"multiple"
+]
+},
+"noise": {
+"attributes": [
+"almost no noise"
+]
+},
+"change": {
+"attributes": [
+"sudden increase",
+"sudden decrease",
+"shake",
+"wide upward spike",
+"wide downward spike"
+]
+}
+}
+}
+}
+]
