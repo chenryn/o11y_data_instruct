@@ -138,7 +138,6 @@ class PipelineExecutor:
     def generate_metric_data(self):
         for incident in self.enriched_incidents:
             self.metrics_data[incident['id']] = generate_synthetic_data(
-                incident, 
                 self.metrics_pattern[incident['id']]
             )
             self.rate_limit()
@@ -182,16 +181,16 @@ class PipelineExecutor:
                     json.dump(self.metrics_pattern.get(incident_id, {}), f, indent=2, ensure_ascii=False)
             
             elif step_name == 'generate_log_data':
-                with open(os.path.join(incident_dir, 'logs.json'), 'w', encoding='utf-8') as f:
-                    json.dump(self.logs_data.get(incident_id, {}), f, indent=2, ensure_ascii=False)
+                with open(os.path.join(incident_dir, 'logs.txt'), 'w', encoding='utf-8') as f:
+                    f.write(self.logs_data.get(incident_id, ''))
             
             elif step_name == 'generate_event_timeline':
                 with open(os.path.join(incident_dir, 'events.json'), 'w', encoding='utf-8') as f:
                     json.dump(self.events_data.get(incident_id, {}), f, indent=2, ensure_ascii=False)
             
             elif step_name == 'generate_metric_data':
-                with open(os.path.join(incident_dir, 'metrics.json'), 'w', encoding='utf-8') as f:
-                    json.dump(self.metrics_data.get(incident_id, {}), f, indent=2, ensure_ascii=False)
+                with open(os.path.join(incident_dir, 'metrics.txt'), 'w', encoding='utf-8') as f:
+                    f.write(self.metrics_data.get(incident_id, ''))
             
             elif step_name == 'init_rca_cot':
                 with open(os.path.join(incident_dir, 'analysis.json'), 'w', encoding='utf-8') as f:
@@ -237,8 +236,62 @@ class PipelineExecutor:
         
         self.logger.info("=== 故障场景生成流水线执行完成 ===")
 
+    def load_data(self, output_dir):
+        """从指定目录加载已保存的数据"""
+        self.logger.info(f"从 {output_dir} 加载已有数据...")
+        
+        # 遍历输出目录下的所有incident目录
+        for incident_dir in os.listdir(output_dir):
+            if not incident_dir.startswith('incident_'):
+                continue
+                
+            incident_path = os.path.join(output_dir, incident_dir)
+            if not os.path.isdir(incident_path):
+                continue
+                
+            incident_id = incident_dir.replace('incident_', '')
+            
+            # 加载incident数据
+            incident_file = os.path.join(incident_path, 'incident.json')
+            if os.path.exists(incident_file):
+                with open(incident_file, 'r', encoding='utf-8') as f:
+                    incident = json.load(f)
+                    self.enriched_incidents.append(incident)
+            
+            # 加载metrics pattern数据
+            pattern_file = os.path.join(incident_path, 'metrics_pattern.json')
+            if os.path.exists(pattern_file):
+                with open(pattern_file, 'r', encoding='utf-8') as f:
+                    self.metrics_pattern[incident_id] = json.load(f)
+            
+            # 加载logs数据
+            logs_file = os.path.join(incident_path, 'logs.txt')
+            if os.path.exists(logs_file):
+                with open(logs_file, 'r', encoding='utf-8') as f:
+                    self.logs_data[incident_id] = f.read()
+            
+            # 加载events数据
+            events_file = os.path.join(incident_path, 'events.json')
+            if os.path.exists(events_file):
+                with open(events_file, 'r', encoding='utf-8') as f:
+                    self.events_data[incident_id] = json.load(f)
+            
+            # 加载metrics数据
+            metrics_file = os.path.join(incident_path, 'metrics.txt')
+            if os.path.exists(metrics_file):
+                with open(metrics_file, 'r', encoding='utf-8') as f:
+                    self.metrics_data[incident_id] = f.read()
+            
+            # 加载analysis数据
+            analysis_file = os.path.join(incident_path, 'analysis.json')
+            if os.path.exists(analysis_file):
+                with open(analysis_file, 'r', encoding='utf-8') as f:
+                    self.analysis_data[incident_id] = json.load(f)
+        
+        self.logger.info(f"成功加载 {len(self.enriched_incidents)} 个故障场景的数据")
+
 if __name__ == "__main__":
     executor = PipelineExecutor()
-    # 示例：从 generate_metric_data 步骤开始执行
     executor.run_pipeline('output')
+    # 示例：从 generate_metric_data 步骤开始执行
     # executor.run_pipeline('output', start_step='generate_metric_data')
