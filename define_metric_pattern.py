@@ -24,6 +24,26 @@ def design_abnormal_patterns(enriched_incident):
     5. Correlation with other metrics
     6. Use any available metric definitions from the ###metric_set###; absence of a metric does not prevent proceeding without it.
 
+    ### Output format example ###
+    {{
+      "metrics": [
+        {{
+          "metric_name": "指标名称",
+          "type": "gauge或counter",
+          "normal_range": "正常范围，如0-5%",
+          "unit": "单位，如percentage/requests/milliseconds等",
+          "dimensional_labels": "标签维度，如service=xxx,url=xxx格式",
+          "statistical_characteristics": "统计特征描述",
+          "abnormal_pattern_type": "异常模式类型",
+          "time_frame": {{
+            "start": "异常时段起始时间",
+            "end": "异常时段结束时间"
+          }},
+          "correlation_with_other_metrics": "与其他指标的相关性描述"
+        }}
+      ]
+    }}
+
     ### metric_set ###
     {metric_set}
 
