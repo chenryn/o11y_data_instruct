@@ -13,7 +13,12 @@ def generate_synthetic_data(metric_patterns):
         2. All parameters from the data generating process should be drawn from reasonable distributions. You should also make sure that the scale of time series is realistic.
         3. Add appropriate noise and seasonality
         4. Only include data for the abnormal periods and an equal length of normal periods preceding them
-        5. Output data in CSV format
+        5. The function must return data in CSV format
+        6. Use datetime objects or timestamps for time handling, avoid direct string manipulation of dates.
+        7. Do not call the function, simply define it.
+        8. When using pandas to_csv(), use lineterminator instead of line_terminator parameter.
+        9. When using pandas date_range, use 's' instead of 'S' for seconds frequency.
+        10. Make sure to assign the result to a variable named 'synthetic_data' before returning.
 
         ###CSV data Format Example###
         #metric=decision_latency_per_transaction,type=gauge,service=risk_management,url=/risk/decision
@@ -29,16 +34,31 @@ def generate_synthetic_data(metric_patterns):
         response = client.chat.completions.create(
             model="qwen-max-2025-01-25",
             messages=[
-                {'role': 'system', 'content': 'You are a helpful assistant.'},
+                {'role': 'system', 'content': 'You are a helpful assistant. Generate only valid Python code that can be executed directly.'},
                 {'role': 'user', 'content': prompt}
             ],
         )
         code = response.choices[0].message.content.strip()
-        
+
+        # 提取实际的 Python 代码（如果代码被 Markdown 代码块包围）
+        if '```python' in code:
+            code = code.split('```python')[1].split('```')[0].strip()
+        elif '```' in code:
+            code = code.split('```')[1].split('```')[0].strip()
+            
         exec_globals = {}
-        exec(code, exec_globals)
-        
-        all_data.append(exec_globals['synthetic_data'])
+        try:
+            # 首先尝试编译代码以捕获语法错误
+            compile(code, '<string>', 'exec')
+            # 如果编译成功，则执行代码
+            exec(code, exec_globals)
+            all_data.append(exec_globals['synthetic_data'])
+        except SyntaxError as e:
+            print(f"语法错误: {str(e)}\n代码:\n{code}")
+            continue
+        except Exception as e:
+            print(f"执行错误: {str(e)}\n代码:\n{code}")
+            continue
     
     return '\n\n'.join(all_data)
 
