@@ -1,0 +1,70 @@
+{
+  "metrics": [
+    {
+      "metric_name": "API Gateway Metrics",
+      "type": "gauge",
+      "normal_range": "0-500ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=公司网银, url=/api/transfer, gateway_instance=gw-01",
+      "statistical_characteristics": "No seasonal pattern; trend shows steady increase during peak hours with moderate noise.",
+      "abnormal_pattern_type": "upward spike followed by wide downward spike",
+      "time_frame": "2023-10-15T09:15:00 - 2023-10-15T09:45:00",
+      "correlation_with_other_metrics": "Correlates with a sudden increase in HTTP 503 errors reported by clients and an upward spike in二代支付接口调用失败."
+    },
+    {
+      "metric_name": "二代支付接口调用失败率",
+      "type": "counter",
+      "normal_range": "0-0.5%",
+      "unit": "percentage",
+      "dimensional_labels": "service=二代支付, interface=payment-api, instance=pay-node-01",
+      "statistical_characteristics": "No seasonal fluctuation; typically steady but can show spikes during certificate-related issues.",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-15T09:15:00 - 2023-10-15T09:45:00",
+      "correlation_with_other_metrics": "Directly correlates with the expiration of certificates, leading to transaction failures and impacting dependent systems like核心系统."
+    },
+    {
+      "metric_name": "HTTP 503 Errors",
+      "type": "counter",
+      "normal_range": "0-2/min",
+      "unit": "count per minute",
+      "dimensional_labels": "service=API网关, endpoint=/api/transfer, client_browser=Chrome",
+      "statistical_characteristics": "No seasonal fluctuations; generally low noise except during incidents.",
+      "abnormal_pattern_type": "sudden increase followed by slow decline",
+      "time_frame": "2023-10-15T09:15:00 - 2023-10-15T09:45:00",
+      "correlation_with_other_metrics": "Correlated with二代支付接口证书过期问题, causing misleading error messages at the API gateway layer."
+    },
+    {
+      "metric_name": "安全认证服务响应时间",
+      "type": "gauge",
+      "normal_range": "100-300ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=安全认证, method=authenticate, instance=auth-svc-02",
+      "statistical_characteristics": "Steady trend with minor fluctuations; no significant seasonality or noise.",
+      "abnormal_pattern_type": "rapid rise followed by slow decline",
+      "time_frame": "2023-10-15T09:15:00 - 2023-10-15T09:45:00",
+      "correlation_with_other_metrics": "Temporary increase observed due to downstream二代支付接口 failures propagating upstream."
+    },
+    {
+      "metric_name": "核心系统接口延迟",
+      "type": "gauge",
+      "normal_range": "200-500ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=核心系统, interface=core-api, instance=core-node-03",
+      "statistical_characteristics": "Stable with slight periodic increases during high load periods.",
+      "abnormal_pattern_type": "no significant change",
+      "time_frame": "2023-10-15T09:15:00 - 2023-10-15T09:45:00",
+      "correlation_with_other_metrics": "Unaffected directly by二代支付接口问题, though indirectly impacted through cascading transaction failures."
+    },
+    {
+      "metric_name": "网络连通性延迟",
+      "type": "gauge",
+      "normal_range": "10-50ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "network_segment=internal, source=API网关, destination=二代支付",
+      "statistical_characteristics": "Low noise with stable trends; no periodic fluctuations.",
+      "abnormal_pattern_type": "no significant change",
+      "time_frame": "2023-10-15T09:15:00 - 2023-10-15T09:45:00",
+      "correlation_with_other_metrics": "Network layer remained stable throughout the incident, ruling out connectivity as a contributing factor."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Error Rates (4xx, 5xx)",
+      "type": "counter",
+      "normal_range": "0-5%",
+      "unit": "percentage",
+      "dimensional_labels": "service=安全平台,url=*/api/security-check",
+      "statistical_characteristics": "no seasonal fluctuation, sudden increase",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased 'Active Connections' and 'Request Rates'"
+    },
+    {
+      "metric_name": "Active Connections",
+      "type": "gauge",
+      "normal_range": "500-1000",
+      "unit": "connections",
+      "dimensional_labels": "service=API网关",
+      "statistical_characteristics": "sin periodic fluctuation, sudden increase",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased 'Error Rates (4xx, 5xx)'"
+    },
+    {
+      "metric_name": "Request Rates",
+      "type": "counter",
+      "normal_range": "100-200 requests/minute",
+      "unit": "requests/minute",
+      "dimensional_labels": "service=触客服务前端",
+      "statistical_characteristics": "sin periodic fluctuation, sudden increase",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased 'Active Connections' and 'Error Rates (4xx, 5xx)'"
+    },
+    {
+      "metric_name": "Response Times",
+      "type": "gauge",
+      "normal_range": "200-500 milliseconds",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=安全平台",
+      "statistical_characteristics": "no seasonal fluctuation, sudden increase",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased 'Error Rates (4xx, 5xx)'"
+    },
+    {
+      "metric_name": "Security Event Logs",
+      "type": "counter",
+      "normal_range": "0-10 logs/minute",
+      "unit": "logs/minute",
+      "dimensional_labels": "service=安全平台",
+      "statistical_characteristics": "no seasonal fluctuation, sudden increase",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased 'Error Rates (4xx, 5xx)'"
+    },
+    {
+      "metric_name": "Network Interface Errors",
+      "type": "counter",
+      "normal_range": "0-5 errors/minute",
+      "unit": "errors/minute",
+      "dimensional_labels": "network_device=API网关",
+      "statistical_characteristics": "no seasonal fluctuation, sudden increase",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased 'Active Connections'"
+    }
+  ]
+}

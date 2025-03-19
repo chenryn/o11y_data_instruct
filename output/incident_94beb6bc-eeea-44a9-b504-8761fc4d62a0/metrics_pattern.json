@@ -1,0 +1,81 @@
+{
+  "metrics": [
+    {
+      "metric_name": "AI模型推理服务实例数量",
+      "type": "gauge",
+      "normal_range": "5-10个实例",
+      "unit": "instance",
+      "dimensional_labels": "service=AI推理服务",
+      "statistical_characteristics": "无季节性波动，趋势保持稳定或逐步增加",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-10T09:00:00 - 2023-10-10T09:45:00",
+      "correlation_with_other_metrics": "与智能客服响应时间变长、请求堆积和超时现象高度相关"
+    },
+    {
+      "metric_name": "智能客服响应时间",
+      "type": "gauge",
+      "normal_range": "200-500ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=智能客服",
+      "statistical_characteristics": "无季节性波动，趋势通常保持稳定",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-10T09:00:00 - 2023-10-10T09:45:00",
+      "correlation_with_other_metrics": "与AI模型推理服务实例不足、第三方支付验证服务延迟相关"
+    },
+    {
+      "metric_name": "数据库连接池使用率",
+      "type": "gauge",
+      "normal_range": "60-80%",
+      "unit": "percentage",
+      "dimensional_labels": "service=数据库/缓存",
+      "statistical_characteristics": "无季节性波动，趋势保持稳定",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-10T09:00:00 - 2023-10-10T09:45:00",
+      "correlation_with_other_metrics": "与智能客服响应时间延长和请求堆积相关联"
+    },
+    {
+      "metric_name": "第三方支付验证服务延迟",
+      "type": "gauge",
+      "normal_range": "100-300ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=第三方支付验证服务",
+      "statistical_characteristics": "无季节性波动，趋势保持稳定",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-10T09:00:00 - 2023-10-10T09:45:00",
+      "correlation_with_other_metrics": "与部分支付操作失败及整体延迟加剧相关"
+    },
+    {
+      "metric_name": "网络带宽利用率",
+      "type": "gauge",
+      "normal_range": "40-70%",
+      "unit": "percentage",
+      "dimensional_labels": "network=internal",
+      "statistical_characteristics": "无季节性波动，趋势保持稳定",
+      "abnormal_pattern_type": "sudden increase",
+      "time_frame": "2023-10-10T09:00:00 - 2023-10-10T09:45:00",
+      "correlation_with_other_metrics": "与智能客服响应时间延长及请求堆积相关"
+    },
+    {
+      "metric_name": "缓存命中率",
+      "type": "gauge",
+      "normal_range": "85-95%",
+      "unit": "percentage",
+      "dimensional_labels": "service=缓存系统",
+      "statistical_characteristics": "无季节性波动，趋势保持稳定",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-10T09:00:00 - 2023-10-10T09:45:00",
+      "correlation_with_other_metrics": "与智能客服响应时间延长和数据库压力增大相关"
+    },
+    {
+      "metric_name": "支付验证失败率",
+      "type": "counter",
+      "normal_range": "0-1%",
+      "unit": "percentage",
+      "dimensional_labels": "service=第三方支付验证服务",
+      "statistical_characteristics": "无季节性波动，趋势保持稳定",
+      "abnormal_pattern_type": "sudden increase",
+      "time_frame": "2023-10-10T09:00:00 - 2023-10-10T09:45:00",
+      "correlation_with_other_metrics": "与部分用户支付操作失败直接相关"
+    }
+  ]
+}

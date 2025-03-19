@@ -1,0 +1,97 @@
+"Below are the log message templates formatted in log4j style for the incident `###enriched_incident###` and generated metrics `###metric_patterns###`. These logs include error, warning, info, and debug messages with relevant technical details.
+
+---
+
+### **Error Messages**
+These logs represent critical failures observed during the incident.
+
+1. **AI Model Inference Service Overload**
+   ```
+   2023-10-10T09:05:00 [ERROR] [hostname=app-server-01] [component=AIæ¨¡åæ¨çæå¡] Request processing failed due to insufficient instances. High concurrency led to request pile-up and timeouts. Error: TimeoutException - Max retries exceeded.
+   ```
+
+2. **Third-Party Payment Validation Failure**
+   ```
+   2023-10-10T09:10:00 [ERROR] [hostname=api-gateway-02] [component=ç¬¬ä¸æ¹APIç½å³] Payment validation request failed intermittently. Error: HTTP 503 Service Unavailable from third-party service. SLA breach detected during peak hours.
+   ```
+
+3. **Database Query Timeout**
+   ```
+   2023-10-10T09:15:00 [ERROR] [hostname=db-cluster-03] [component=æ°æ®åº/ç¼å­] Query execution timed out after 30 seconds. Connection pool exhausted. Error: SQLException - Deadlock detected while processing user request.
+   ```
+
+---
+
+### **Warning Messages**
+These logs indicate developing issues that preceded or accompanied the incident.
+
+1. **High Latency in AI Model Service**
+   ```
+   2023-10-10T09:02:00 [WARN] [hostname=app-server-01] [component=AIæ¨¡åæ¨çæå¡] Observed latency spike in model inference requests. Average response time increased by 200% over the last 5 minutes.
+   ```
+
+2. **Cache Miss Rate Increase**
+   ```
+   2023-10-10T09:08:00 [WARN] [hostname=cache-node-04] [component=æ°æ®åº/ç¼å­] Cache hit rate dropped below threshold (current: 60%, expected: 90%). Potential impact on downstream services.
+   ```
+
+3. **Unstable Third-Party API Response**
+   ```
+   2023-10-10T09:12:00 [WARN] [hostname=api-gateway-02] [component=ç¬¬ä¸æ¹APIç½å³] Intermittent delays observed in payment validation responses. Average response time > 5 seconds.
+   ```
+
+---
+
+### **Info Messages**
+These logs show system state changes or operational updates.
+
+1. **Auto-Scaling Trigger Attempt**
+   ```
+   2023-10-10T09:07:00 [INFO] [hostname=orchestrator-05] [component=æºè½å®¢æ] Auto-scaling policy triggered for AIæ¨¡åæ¨çæå¡. Scaling up instance count from 5 to 10.
+   ```
+
+2. **Fallback Mechanism Activated**
+   ```
+   2023-10-10T09:20:00 [INFO] [hostname=api-gateway-02] [component=ç¬¬ä¸æ¹APIç½å³] Fallback mechanism activated for payment validation service. Redirecting traffic to backup provider.
+   ```
+
+3. **Incident Resolution Update**
+   ```
+   2023-10-10T09:40:00 [INFO] [hostname=monitoring-dashboard] [component=æºè½å®¢æ] Incident resolution confirmed. System performance restored to normal levels. MTTR: 45 minutes.
+   ```
+
+---
+
+### **Debug Messages**
+These logs provide detailed technical insights into the root causes and behavior of components.
+
+1. **Detailed Resource Utilization**
+   ```
+   2023-10-10T09:03:00 [DEBUG] [hostname=app-server-01] [component=AIæ¨¡åæ¨çæå¡] CPU usage at 95%, memory utilization at 85%. Active threads: 200. Pending requests: 500.
+   ```
+
+2. **Database Connection Pool Status**
+   ```
+   2023-10-10T09:14:00 [DEBUG] [hostname=db-cluster-03] [component=æ°æ®åº/ç¼å­] Current connection pool size: 100. Available connections: 5. Wait queue length: 20.
+   ```
+
+3. **Third-Party API Latency Metrics**
+   ```
+   2023-10-10T09:18:00 [DEBUG] [hostname=api-gateway-02] [component=ç¬¬ä¸æ¹APIç½å³] Payment validation API latency metrics: P50=2s, P90=5s, P99=10s. Error rate: 15%.
+   ```
+
+4. **Network Bandwidth Analysis**
+   ```
+   2023-10-10T09:25:00 [DEBUG] [hostname=network-monitor] [component=ç½ç»å±] Network bandwidth usage: 80%. Packet loss rate: 0.1%. Latency to third-party service: 150ms.
+   ```
+
+---
+
+### Summary of Logs
+The above log templates capture the sequence of events leading to and resolving the incident. They highlight:
+- Errors related to resource exhaustion and external dependencies.
+- Warnings signaling early signs of degradation.
+- Info-level updates about system adjustments and recovery.
+- Debug-level details for deep-dive analysis.
+
+These logs can be used to reconstruct the timeline of the incident and improve monitoring and alerting mechanisms."

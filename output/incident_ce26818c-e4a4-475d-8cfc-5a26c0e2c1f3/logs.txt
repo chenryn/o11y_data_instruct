@@ -1,0 +1,51 @@
+"Below are log message templates formatted in log4j style, capturing the incident-related events around the specified time frame (`2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z`). Each log entry includes a timestamp, hostname, severity level, and relevant component tags.
+
+---
+
+### **Error Messages from Affected Components**
+```log
+2023-10-01T09:05:00Z [api-gateway-host] ERROR [API Gateway] - Request to /login failed with HTTP 500. Error: "Upstream service timeout". Service=ææºé¶è¡App, URL=/login
+2023-10-01T09:10:00Z [auth-service-host] ERROR [å®å¨è®¤è¯æå¡] - Backend server latency exceeded threshold (800ms). Pod=identity-auth-pod-1, Latency=1200ms
+2023-10-01T09:15:00Z [config-mgmt-host] ERROR [éç½®ç®¡çæå¡] - Configuration sync delay detected. Node=node-3, Delay=15s
+2023-10-01T09:20:00Z [load-balancer-host] ERROR [èº«ä»½è®¤è¯è´è½½åè¡¡å¨] - Load balancer health check failed for backend pod identity-auth-pod-2. Status=Unhealthy
+```
+
+---
+
+### **Warning Messages Indicating Developing Issues**
+```log
+2023-10-01T09:02:00Z [api-gateway-host] WARN [API Gateway] - Increased API response time observed for /login endpoint. Current latency=600ms, Threshold=500ms. Service=ææºé¶è¡App
+2023-10-01T09:08:00Z [auth-service-host] WARN [å®å¨è®¤è¯æå¡] - Rising backend server latency detected. Average latency=450ms, Threshold=300ms. Pods=identity-auth-pod-*
+2023-10-01T09:12:00Z [config-mgmt-host] WARN [éç½®ç®¡çæå¡] - Sync delay approaching critical threshold. Node=node-2, Delay=7s
+2023-10-01T09:18:00Z [db-host] WARN [ç¨æ·èº«ä»½è®¤è¯æ°æ®åº] - Database connection pool usage at 85%. Threshold=60%. Potential risk of exhaustion.
+```
+
+---
+
+### **Info Messages Showing System State Changes**
+```log
+2023-10-01T09:00:00Z [api-gateway-host] INFO [API Gateway] - Traffic surge detected on /login endpoint. Requests/sec increased from 200 to 1200. Service=ææºé¶è¡App
+2023-10-01T09:10:00Z [auth-service-host] INFO [å®å¨è®¤è¯æå¡] - Load balancer configuration updated. New settings applied to pods identity-auth-pod-*.
+2023-10-01T09:25:00Z [config-mgmt-host] INFO [éç½®ç®¡çæå¡] - Configuration sync process initiated for nodes node-*. Expected completion time=30s.
+2023-10-01T09:30:00Z [db-host] INFO [ç¨æ·èº«ä»½è®¤è¯æ°æ®åº] - Database connection pool expanded. Max connections increased from 100 to 150.
+```
+
+---
+
+### **Debug Messages with Relevant Technical Details**
+```log
+2023-10-01T09:01:00Z [api-gateway-host] DEBUG [API Gateway] - API request details: Method=POST, URL=/login, QueryParams={}, Headers={"Authorization": "Bearer <token>"}. ResponseTime=450ms
+2023-10-01T09:07:00Z [auth-service-host] DEBUG [å®å¨è®¤è¯æå¡] - Backend server processing details: Pod=identity-auth-pod-1, RequestID=abc123, ProcessingTime=750ms, DBQueryTime=300ms
+2023-10-01T09:14:00Z [config-mgmt-host] DEBUG [éç½®ç®¡çæå¡] - Sync process details: Node=node-1, LastSyncTimestamp=2023-10-01T08:59:00Z, CurrentTimestamp=2023-10-01T09:00:00Z, Delta=60s
+2023-10-01T09:22:00Z [db-host] DEBUG [ç¨æ·èº«ä»½è®¤è¯æ°æ®åº] - Connection pool metrics: ActiveConnections=85, IdleConnections=10, WaitingRequests=5
+```
+
+---
+
+### **Key Observations from Logs**
+1. **Error Logs**: Highlight critical failures such as timeouts, backend latency spikes, and configuration sync delays.
+2. **Warning Logs**: Provide early indicators of potential issues, such as rising latencies or resource usage nearing thresholds.
+3. **Info Logs**: Capture significant system state changes, including traffic surges and configuration updates.
+4. **Debug Logs**: Offer granular technical insights into request processing, backend operations, and synchronization mechanisms.
+
+These logs collectively help in diagnosing the root cause of the incident, understanding its progression, and guiding remediation efforts."

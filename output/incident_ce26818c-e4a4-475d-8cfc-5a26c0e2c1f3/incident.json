@@ -1,0 +1,30 @@
+{
+  "incident": {
+    "title": "手机银行App高峰期登录失败问题调查",
+    "affected_components": {
+      "primary_system": "手机银行App",
+      "dependent_systems": "安全认证, 配置管理服务",
+      "transaction_chain": "手机银行App前端 -> API网关 -> 安全认证服务 -> 身份认证负载均衡器 -> 配置管理服务"
+    },
+    "severity": "Critical",
+    "symptom_analysis": {
+      "observed_issues": "用户在业务高峰期无法登录手机银行App，导致大量投诉。",
+      "technical_characteristics": "身份认证服务的负载均衡器配置错误，导致请求堆积和超时。此外，配置管理服务中的参数同步延迟进一步加剧了问题。",
+      "additional_contributing_factors": "配置管理服务未能及时将最新的负载均衡器设置同步到所有节点，导致部分节点仍使用旧的、不正确的配置。"
+    },
+    "incident_time_range": "2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z",
+    "business_impact_assessment": {
+      "operational_impact": "客户无法登录手机银行App，影响正常银行业务操作。",
+      "customer_experience_impact": "客户体验严重受损，可能导致客户流失。",
+      "financial_impact": "潜在的收入损失，特别是在支付和交易相关的业务中。由于配置同步问题未解决，可能会引发后续类似事件，增加长期财务风险。"
+    },
+    "recommended_initial_analysis_actions": {
+      "network_analysis": "检查网络带宽使用情况、网络延迟指标以及数据包丢失率。",
+      "application_analysis": "分析API响应时间分布、服务器资源使用情况、数据库连接池状态以及缓存命中率，并特别关注配置管理服务的日志以识别同步延迟的根本原因。",
+      "client_analysis": "收集并分析移动终端性能指标、客户端日志以及用户操作行为。",
+      "configuration_management_review": "审查配置管理服务的同步机制，包括其依赖的时间戳校准、消息队列处理效率及异常重试逻辑。"
+    },
+    "id": "ae7271b7-0468-4afd-bc3f-d621e9463c5e"
+  },
+  "id": "ce26818c-e4a4-475d-8cfc-5a26c0e2c1f3"
+}

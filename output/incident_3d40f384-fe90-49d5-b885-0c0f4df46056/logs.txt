@@ -1,0 +1,82 @@
+"Below is a set of log message templates formatted in `log4j` style, capturing the incident and metrics patterns described. Each log entry includes a timestamp, hostname, severity level, component tag, and relevant contextual details.
+
+---
+
+### **Error Messages from Affected Components**
+1. **Log Message for Payment Gateway Connection Pool Exhaustion**
+   ```
+   2023-10-15T14:05:00Z [payment-gateway-service] ERROR [ä¸æ¹æ¯ä»ç½å³] - Connection pool exhausted. Current connections: 0, Max allowed: 1500. Unable to process incoming requests.
+   ```
+
+2. **Log Message for Security Authentication Service Configuration Error**
+   ```
+   2023-10-15T14:03:00Z [auth-service-pod-1] ERROR [å®å¨è®¤è¯æå¡] - Configuration mismatch detected. Invalid policy applied to authentication endpoint. Rejecting unauthorized requests.
+   ```
+
+3. **Log Message for Pod Restarts in Payment Business**
+   ```
+   2023-10-15T14:06:00Z [payment-gateway-pod-1] ERROR [æ¯ä»ä¸å¡] - Unexpected pod restart triggered due to resource exhaustion. Restart count exceeded normal range (current: 5, threshold: 2).
+   ```
+
+---
+
+### **Warning Messages Indicating Developing Issues**
+1. **Log Message for API Gateway Latency Increase**
+   ```
+   2023-10-15T14:01:00Z [api-gateway-service] WARN [APIç½å³] - Latency spike detected on endpoint /payment. Average response time increased from 200ms to 450ms over the last minute.
+   ```
+
+2. **Log Message for Declining Throughput**
+   ```
+   2023-10-15T14:02:00Z [payment-business-service] WARN [æ¯ä»ä¸å¡] - Throughput dropped below normal range (current: 300 req/sec, expected: 500-1000 req/sec). Potential bottleneck identified at upstream services.
+   ```
+
+3. **Log Message for Authentication Failure Spike**
+   ```
+   2023-10-15T14:04:00Z [auth-service-pod-1] WARN [å®å¨è®¤è¯æå¡] - Authentication success rate dropped to 85% (normal range: 95-100%). Investigating potential misconfiguration or service degradation.
+   ```
+
+---
+
+### **Info Messages Showing System State Changes**
+1. **Log Message for Temporary Scaling of Payment Gateway**
+   ```
+   2023-10-15T14:08:00Z [payment-gateway-service] INFO [ä¸æ¹æ¯ä»ç½å³] - Auto-scaling triggered. Increasing connection pool size from 1000 to 2000 to handle traffic surge.
+   ```
+
+2. **Log Message for Security Service Configuration Fix**
+   ```
+   2023-10-15T14:10:00Z [auth-service-pod-1] INFO [å®å¨è®¤è¯æå¡] - Configuration updated successfully. Misconfigured policy reverted to default settings. Service restored to operational state.
+   ```
+
+3. **Log Message for Incident Resolution**
+   ```
+   2023-10-15T14:12:00Z [incident-management-system] INFO [æ¯ä»ä¸å¡] - Incident resolved. All services restored to normal operation. MTTR: 12 minutes.
+   ```
+
+---
+
+### **Debug Messages with Relevant Technical Details**
+1. **Log Message for Detailed Connection Metrics**
+   ```
+   2023-10-15T14:05:00Z [payment-gateway-service] DEBUG [ä¸æ¹æ¯ä»ç½å³] - Current connection metrics: Active connections=0, Pending requests=500, Timeout errors=200. Investigating root cause.
+   ```
+
+2. **Log Message for API Gateway Performance Analysis**
+   ```
+   2023-10-15T14:03:00Z [api-gateway-service] DEBUG [APIç½å³] - Endpoint /payment performance breakdown: Latency=450ms, CPU usage=85%, Memory usage=70%. No periodic fluctuations observed.
+   ```
+
+3. **Log Message for Authentication Service Logs**
+   ```
+   2023-10-15T14:04:00Z [auth-service-pod-1] DEBUG [å®å¨è®¤è¯æå¡] - Authentication failure logs: Policy ID=auth-policy-123, Rejected requests=150, Success rate=85%. Reviewing configuration file.
+   ```
+
+4. **Log Message for Network Latency Debugging**
+   ```
+   2023-10-15T14:01:00Z [network-monitoring-service] DEBUG [ç½ç»åºç¡è®¾æ½] - Internal network segment latency: Core router latency=120ms, Jitter=20ms. Investigating correlation with API gateway performance.
+   ```
+
+---
+
+These log messages provide a comprehensive view of the incident timeline, capturing both high-level impacts and low-level technical details. They can be used for real-time monitoring, post-incident analysis, and improving system resilience."

@@ -1,0 +1,70 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Request Latency",
+      "type": "gauge",
+      "normal_range": "0-500ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=SSO,url=/login",
+      "statistical_characteristics": "no periodic fluctuation, increase trend, almost no noise",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-11-01T14:00:00 - 2023-11-01T14:30:00",
+      "correlation_with_other_metrics": "Correlated with increased 'Error Rates' and decreased 'Service Availability' for the SSO service."
+    },
+    {
+      "metric_name": "Error Rates (4xx, 5xx)",
+      "type": "counter",
+      "normal_range": "0-1%",
+      "unit": "percentage",
+      "dimensional_labels": "service=SSO,url=/login",
+      "statistical_characteristics": "no periodic fluctuation, sudden increase trend, noisy",
+      "abnormal_pattern_type": "sudden increase",
+      "time_frame": "2023-11-01T14:00:00 - 2023-11-01T14:30:00",
+      "correlation_with_other_metrics": "Correlated with high 'Request Latency' and low 'Service Availability' in the SSO service."
+    },
+    {
+      "metric_name": "Throughput (Requests per Second)",
+      "type": "gauge",
+      "normal_range": "100-200 requests/sec",
+      "unit": "requests/second",
+      "dimensional_labels": "service=SSO,url=/login",
+      "statistical_characteristics": "sin periodic fluctuation, decrease trend, almost no noise",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-11-01T14:00:00 - 2023-11-01T14:30:00",
+      "correlation_with_other_metrics": "Correlated with reduced user activity due to login issues; also linked to higher 'Error Rates'."
+    },
+    {
+      "metric_name": "Service Availability",
+      "type": "gauge",
+      "normal_range": "99.9%-100%",
+      "unit": "percentage",
+      "dimensional_labels": "service=SSO",
+      "statistical_characteristics": "no periodic fluctuation, keep steady trend, almost no noise",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-11-01T14:00:00 - 2023-11-01T14:30:00",
+      "correlation_with_other_metrics": "Directly impacted by elevated 'Request Latency' and 'Error Rates'; indirectly affects dependent systems like User Center and Security Authentication."
+    },
+    {
+      "metric_name": "API Gateway Metrics",
+      "type": "gauge",
+      "normal_range": "0-200ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "gateway=company_ebank,url=/api/sso/login",
+      "statistical_characteristics": "no periodic fluctuation, increase trend, almost no noise",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-11-01T14:00:00 - 2023-11-01T14:30:00",
+      "correlation_with_other_metrics": "Linked to delays in downstream services such as SSO and User Center; reflects end-to-end transaction latency."
+    },
+    {
+      "metric_name": "Node CPU Usage",
+      "type": "gauge",
+      "normal_range": "40%-60%",
+      "unit": "percentage",
+      "dimensional_labels": "node=performance_insufficient_node",
+      "statistical_characteristics": "no periodic fluctuation, increase trend, noisy",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-11-01T14:00:00 - 2023-11-01T14:30:00",
+      "correlation_with_other_metrics": "Indicates resource exhaustion on the problematic node assigned excessive traffic by misconfigured load balancer."
+    }
+  ]
+}

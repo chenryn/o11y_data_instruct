@@ -1,0 +1,34 @@
+{
+  "incident": {
+    "title": "支付业务响应延迟问题调查",
+    "affected_components": {
+      "primary_system": "支付业务",
+      "dependent_systems": "三方支付, 核心系统, 账管中心, 用户中心, API网关, 缓存服务",
+      "transaction_chain": "支付业务前端 -> API网关 -> 缓存服务 -> 核心系统接口 -> 账管中心"
+    },
+    "severity": "High",
+    "symptom_analysis": {
+      "observed_issues": "支付交易响应时间显著增加，部分用户反馈操作卡顿或超时。",
+      "technical_characteristics": "缓存服务的命中率下降，导致大量请求直接穿透至后端核心系统，引发性能瓶颈。"
+    },
+    "incident_time_range": {
+      "start_time": "2023-10-20T10:00:00Z",
+      "end_time": "2023-10-20T10:15:00Z",
+      "mttr": "15分钟"
+    },
+    "business_impact": {
+      "operational_impact": "支付操作延迟影响用户体验，可能导致客户流失。",
+      "financial_impact": "交易处理效率降低可能间接导致收入损失。",
+      "reputation_impact": "支付环节的延迟可能对品牌可靠性造成负面影响。"
+    },
+    "recommended_actions": {
+      "network_analysis": "检查网络带宽使用情况及API网关到缓存服务的通信延迟。",
+      "application_analysis": "分析缓存服务的命中率、失效策略以及核心系统的负载分布。",
+      "client_analysis": "收集客户端日志和性能数据，确认是否存在异常流量模式。",
+      "immediate_mitigation": "临时调整缓存服务的容量，并优化缓存失效机制以减少穿透效应。",
+      "long_term_solution": "引入多级缓存架构，增强缓存预热能力；定期评估缓存策略并进行调优。"
+    },
+    "id": "68cbc8c3-e31b-4927-b1c3-85247a2ec628"
+  },
+  "id": "7e6f9a1c-b3d4-4a2f-8e7c-5b1f2d3e4a5b"
+}

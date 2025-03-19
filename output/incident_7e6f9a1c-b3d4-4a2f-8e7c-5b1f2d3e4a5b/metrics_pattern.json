@@ -1,0 +1,81 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Cache Hits and Misses",
+      "type": "gauge",
+      "normal_range": "90-98%",
+      "unit": "percent",
+      "dimensional_labels": "service=缓存服务",
+      "statistical_characteristics": "no periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-20T10:00:00Z - 2023-10-20T10:15:00Z",
+      "correlation_with_other_metrics": "Correlated with increased response times in dependent systems like 核心系统 and 账管中心."
+    },
+    {
+      "metric_name": "Request Latency",
+      "type": "gauge",
+      "normal_range": "200-500ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=支付业务前端, url=/payment/submit",
+      "statistical_characteristics": "no periodic fluctuation, noisy",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-20T10:00:00Z - 2023-10-20T10:15:00Z",
+      "correlation_with_other_metrics": "Correlated with Cache Hits and Misses showing a downward spike, and higher load on 核心系统接口."
+    },
+    {
+      "metric_name": "Throughput (Requests per Second)",
+      "type": "counter",
+      "normal_range": "50-100 requests/sec",
+      "unit": "requests/sec",
+      "dimensional_labels": "service=API网关",
+      "statistical_characteristics": "sin periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "sudden increase followed by slow decline",
+      "time_frame": "2023-10-20T10:00:00Z - 2023-10-20T10:15:00Z",
+      "correlation_with_other_metrics": "Correlated with spikes in Request Latency and decrease in Cache Hits and Misses."
+    },
+    {
+      "metric_name": "Error Rates (4xx, 5xx)",
+      "type": "counter",
+      "normal_range": "0-1%",
+      "unit": "percentage",
+      "dimensional_labels": "service=支付业务前端",
+      "statistical_characteristics": "no periodic fluctuation, noisy",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-20T10:00:00Z - 2023-10-20T10:15:00Z",
+      "correlation_with_other_metrics": "Correlated with high Request Latency and low Cache Hits and Misses."
+    },
+    {
+      "metric_name": "Active Connections",
+      "type": "gauge",
+      "normal_range": "100-200 connections",
+      "unit": "connections",
+      "dimensional_labels": "service=API网关",
+      "statistical_characteristics": "sin periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-20T10:00:00Z - 2023-10-20T10:15:00Z",
+      "correlation_with_other_metrics": "Correlated with Throughput spikes and increased Request Latency."
+    },
+    {
+      "metric_name": "CPU and Memory Usage per Service",
+      "type": "gauge",
+      "normal_range": "50-70% CPU, 60-80% Memory",
+      "unit": "percent",
+      "dimensional_labels": "service=核心系统接口",
+      "statistical_characteristics": "sin periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-20T10:00:00Z - 2023-10-20T10:15:00Z",
+      "correlation_with_other_metrics": "Correlated with decreased Cache Hits and Misses and increased Request Latency."
+    },
+    {
+      "metric_name": "Network Traffic to Database",
+      "type": "counter",
+      "normal_range": "10-20 MB/sec",
+      "unit": "MB/sec",
+      "dimensional_labels": "service=账管中心",
+      "statistical_characteristics": "no periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-20T10:00:00Z - 2023-10-20T10:15:00Z",
+      "correlation_with_other_metrics": "Correlated with increased load on 核心系统接口 and higher Request Latency."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Database Query Performance",
+      "type": "gauge",
+      "normal_range": "0-200 milliseconds",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=统一额度,query_type=主从同步",
+      "statistical_characteristics": "no periodic fluctuation, increase trend, almost no noise",
+      "abnormal_pattern_type": "upward spike followed by slow decline",
+      "time_frame": "2023-10-10T14:05:00Z - 2023-10-10T14:15:00Z",
+      "correlation_with_other_metrics": "Correlates with increased latency in API Gateway Metrics and Service Dependency Latency."
+    },
+    {
+      "metric_name": "API Gateway Metrics",
+      "type": "gauge",
+      "normal_range": "0-500 milliseconds",
+      "unit": "milliseconds",
+      "dimensional_labels": "gateway=消费信贷前端",
+      "statistical_characteristics": "sin periodic fluctuation, increase trend during peak hours, noisy",
+      "abnormal_pattern_type": "sudden increase followed by wide upward spike",
+      "time_frame": "2023-10-10T14:10:00Z - 2023-10-10T14:25:00Z",
+      "correlation_with_other_metrics": "Correlates with high request rates and connection timeouts in Web Servers metrics."
+    },
+    {
+      "metric_name": "Service Dependency Latency",
+      "type": "gauge",
+      "normal_range": "0-300 milliseconds",
+      "unit": "milliseconds",
+      "dimensional_labels": "dependency=统一额度服务",
+      "statistical_characteristics": "no periodic fluctuation, multiple trends due to varying load, noisy",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-10T14:15:00Z - 2023-10-10T14:30:00Z",
+      "correlation_with_other_metrics": "Correlates with Database Query Performance issues and high API Gateway Metrics."
+    },
+    {
+      "metric_name": "Request Rates",
+      "type": "counter",
+      "normal_range": "100-500 requests/minute",
+      "unit": "requests/minute",
+      "dimensional_labels": "service=消费信贷前端",
+      "statistical_characteristics": "sin periodic fluctuation, increase trend during business hours, noisy",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-10T14:10:00Z - 2023-10-10T14:25:00Z",
+      "correlation_with_other_metrics": "Correlates with increased error rates and response times in Web Servers metrics."
+    },
+    {
+      "metric_name": "Error Rates (4xx, 5xx)",
+      "type": "counter",
+      "normal_range": "0-5 errors/minute",
+      "unit": "errors/minute",
+      "dimensional_labels": "service=消费信贷前端",
+      "statistical_characteristics": "no periodic fluctuation, sudden spikes during incidents, noisy",
+      "abnormal_pattern_type": "sudden increase followed by wide upward spike",
+      "time_frame": "2023-10-10T14:15:00Z - 2023-10-10T14:30:00Z",
+      "correlation_with_other_metrics": "Correlates with high API Gateway Metrics and Service Dependency Latency."
+    },
+    {
+      "metric_name": "Connection Timeouts",
+      "type": "counter",
+      "normal_range": "0-2 timeouts/minute",
+      "unit": "timeouts/minute",
+      "dimensional_labels": "service=消费信贷前端",
+      "statistical_characteristics": "no periodic fluctuation, sudden spikes during high load, almost no noise",
+      "abnormal_pattern_type": "sudden increase followed by wide upward spike",
+      "time_frame": "2023-10-10T14:20:00Z - 2023-10-10T14:30:00Z",
+      "correlation_with_other_metrics": "Correlates with high Request Rates and Error Rates in Web Servers metrics."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "metrics": [
+    {
+      "metric_name": "HDFS存储节点健康状态",
+      "type": "gauge",
+      "normal_range": "100% (所有节点正常)",
+      "unit": "percentage",
+      "dimensional_labels": "service=HDFS,component=storage_node",
+      "statistical_characteristics": "无季节性波动，趋势平稳，几乎无噪声",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-01T08:00:00Z - 2023-10-01T08:05:00Z",
+      "correlation_with_other_metrics": "与副本数量和数据丢失范围强相关"
+    },
+    {
+      "metric_name": "HDFS副本数量",
+      "type": "gauge",
+      "normal_range": "3 (默认副本策略)",
+      "unit": "count",
+      "dimensional_labels": "service=HDFS,component=replication",
+      "statistical_characteristics": "无季节性波动，趋势平稳，几乎无噪声",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-01T08:05:00Z - 2023-10-01T08:10:00Z",
+      "correlation_with_other_metrics": "与存储节点健康状态和数据丢失范围强相关"
+    },
+    {
+      "metric_name": "数据丢失范围",
+      "type": "counter",
+      "normal_range": "0 MB (无数据丢失)",
+      "unit": "MB",
+      "dimensional_labels": "service=HDFS,component=data_loss",
+      "statistical_characteristics": "无季节性波动，趋势平稳，几乎无噪声",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-01T08:10:00Z - 2023-10-01T08:15:00Z",
+      "correlation_with_other_metrics": "与存储节点健康状态和副本数量强相关"
+    },
+    {
+      "metric_name": "网络延迟",
+      "type": "gauge",
+      "normal_range": "10-50 ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=network,component=latency",
+      "statistical_characteristics": "无季节性波动，趋势平稳，轻微噪声",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-01T08:00:00Z - 2023-10-01T08:05:00Z",
+      "correlation_with_other_metrics": "误导性症状，与存储节点宕机无直接因果关系"
+    },
+    {
+      "metric_name": "报表生成任务成功率",
+      "type": "gauge",
+      "normal_range": "99.9%-100%",
+      "unit": "percentage",
+      "dimensional_labels": "service=reporting,component=task_success_rate",
+      "statistical_characteristics": "无季节性波动，趋势平稳，几乎无噪声",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-01T08:15:00Z - 2023-10-01T08:30:00Z",
+      "correlation_with_other_metrics": "与数据丢失范围和下游系统依赖强相关"
+    },
+    {
+      "metric_name": "决策支持系统响应时间",
+      "type": "gauge",
+      "normal_range": "200-500 ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=decision_support,component=response_time",
+      "statistical_characteristics": "无季节性波动，趋势平稳，轻微噪声",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-01T08:30:00Z - 2023-10-01T09:00:00Z",
+      "correlation_with_other_metrics": "与报表生成任务失败和数据丢失范围强相关"
+    },
+    {
+      "metric_name": "下游系统调用失败率",
+      "type": "gauge",
+      "normal_range": "0%-0.1%",
+      "unit": "percentage",
+      "dimensional_labels": "service=downstream_systems,component=failure_rate",
+      "statistical_characteristics": "无季节性波动，趋势平稳，几乎无噪声",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-01T08:15:00Z - 2023-10-01T08:45:00Z",
+      "correlation_with_other_metrics": "与HDFS存储节点宕机和数据丢失范围强相关"
+    }
+  ]
+}

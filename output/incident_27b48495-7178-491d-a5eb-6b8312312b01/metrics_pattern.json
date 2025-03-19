@@ -1,0 +1,70 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Disk Space Usage",
+      "metric_type": "gauge",
+      "normal_range": "0-80%",
+      "unit": "percent",
+      "dimensional_labels": "service=file_transfer_service,host=primary_server",
+      "statistical_characteristics": "no seasonal fluctuation, upward trend during incident",
+      "abnormal_pattern_type": "continuous upward spike followed by wide downward spike",
+      "time_frame": "2023-10-01T08:00:00Z to 2023-10-01T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with File Transfer Service Errors and Temporary File Write Failures"
+    },
+    {
+      "metric_name": "Network Bandwidth Usage",
+      "metric_type": "gauge",
+      "normal_range": "0-70%",
+      "unit": "percent",
+      "dimensional_labels": "service=database_sync_service,network_interface=eth0",
+      "statistical_characteristics": "sin periodic fluctuation during business hours",
+      "abnormal_pattern_type": "sudden increase followed by slow decline",
+      "time_frame": "2023-10-01T08:00:00Z to 2023-10-01T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with Database Sync Latency and Data Backlog Growth"
+    },
+    {
+      "metric_name": "Database Sync Latency",
+      "metric_type": "gauge",
+      "normal_range": "0-500ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=database_sync_service,database=regulatory_reporting_db",
+      "statistical_characteristics": "no seasonal fluctuation, sharp increase during incident",
+      "abnormal_pattern_type": "rapid rise followed by slow decline",
+      "time_frame": "2023-10-01T08:00:00Z to 2023-10-01T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with Network Bandwidth Usage and Data Backlog Size"
+    },
+    {
+      "metric_name": "File Transfer Service Errors",
+      "metric_type": "counter",
+      "normal_range": "0 errors/min",
+      "unit": "count",
+      "dimensional_labels": "service=file_transfer_service,error_type=disk_full",
+      "statistical_characteristics": "no seasonal fluctuation, sudden spike during incident",
+      "abnormal_pattern_type": "upward spike followed by decrease after manual intervention",
+      "time_frame": "2023-10-01T08:00:00Z to 2023-10-01T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with Disk Space Usage and Temporary File Write Failures"
+    },
+    {
+      "metric_name": "Temporary File Write Failures",
+      "metric_type": "counter",
+      "normal_range": "0 failures/min",
+      "unit": "count",
+      "dimensional_labels": "service=file_transfer_service,host=primary_server",
+      "statistical_characteristics": "no seasonal fluctuation, sharp increase during incident",
+      "abnormal_pattern_type": "upward spike followed by decrease after disk cleanup",
+      "time_frame": "2023-10-01T08:00:00Z to 2023-10-01T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with Disk Space Usage and File Transfer Service Errors"
+    },
+    {
+      "metric_name": "Data Backlog Size",
+      "metric_type": "gauge",
+      "normal_range": "0-100MB",
+      "unit": "megabytes",
+      "dimensional_labels": "service=database_sync_service,queue=regulatory_data_queue",
+      "statistical_characteristics": "no seasonal fluctuation, gradual increase during incident",
+      "abnormal_pattern_type": "continuous upward spike followed by rapid decline after network recovery",
+      "time_frame": "2023-10-01T08:00:00Z to 2023-10-01T08:45:00Z",
+      "correlation_with_other_metrics": "Correlates with Network Bandwidth Usage and Database Sync Latency"
+    }
+  ]
+}

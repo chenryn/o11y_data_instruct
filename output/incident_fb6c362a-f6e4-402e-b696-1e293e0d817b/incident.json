@@ -1,0 +1,34 @@
+{
+  "incident": {
+    "title": "大数据平台报表生成任务失败调查",
+    "affected_components": {
+      "primary_system": "大数据平台",
+      "dependent_systems": "安全认证, 账管中心, 核心系统, 用户中心",
+      "transaction_chain": "HDFS存储服务, 数据处理引擎, 报表生成模块, 决策支持系统"
+    },
+    "severity": "Critical",
+    "symptom_analysis": {
+      "observed_issues": "报表生成任务失败, 数据丢失, 影响决策支持",
+      "technical_characteristics": "HDFS存储节点宕机，副本数量不足导致数据丢失，影响下游依赖系统的正常运行。问题在数据写入或读取时暴露，未触发冗余恢复机制。",
+      "misleading_symptoms": "部分日志显示网络延迟增加，误导团队初步怀疑为网络瓶颈问题，而非存储节点故障。"
+    },
+    "incident_time_range": {
+      "start_time": "2023-10-01T08:00:00Z",
+      "end_time": "2023-10-01T09:15:00Z",
+      "mttr": "75分钟"
+    },
+    "business_impact": {
+      "operational_impact": "关键决策支持中断，可能导致业务决策延迟或错误；报表相关工作流停滞；客户体验受影响。",
+      "financial_impact": "可能因决策延误导致潜在收益损失；需投入额外资源进行数据恢复和系统修复。",
+      "reputation_impact": "客户及内部用户对系统可靠性的信任度下降。"
+    },
+    "recommended_actions": {
+      "initial_analysis": "检查HDFS存储节点的健康状态和日志；确认副本策略配置是否合理；分析数据丢失范围及影响；排查网络性能指标以排除误导性症状。",
+      "root_cause_investigation": "评估硬件故障原因；审查集群的副本分布策略；排查是否存在配置错误或人为操作失误；深入分析网络延迟日志，验证其与存储节点宕机的相关性。",
+      "remediation_steps": "增加HDFS副本数量以提高容错能力；启用自动故障检测与恢复机制；定期备份关键数据；优化网络监控工具，减少误报。",
+      "preventive_measures": "优化存储节点监控告警规则；实施定期演练以验证灾难恢复计划；加强运维团队培训；引入更精细的日志分析工具，快速区分真实问题与误导性症状。"
+    },
+    "id": "ab129b89-035b-4899-b9bd-d1496b4855c4"
+  },
+  "id": "fb6c362a-f6e4-402e-b696-1e293e0d817b"
+}

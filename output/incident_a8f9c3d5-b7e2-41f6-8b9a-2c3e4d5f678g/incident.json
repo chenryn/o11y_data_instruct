@@ -1,0 +1,34 @@
+{
+  "incident": {
+    "title": "公司网银登录功能异常问题调查",
+    "affected_components": {
+      "primary_system": "公司网银",
+      "dependent_systems": "SSO, 用户中心, 安全认证, 核心系统",
+      "transaction_chain": "公司网银前端 -> API网关 -> SSO服务 -> 用户中心 -> 安全认证服务"
+    },
+    "severity": "High",
+    "symptom_analysis": {
+      "observed_issues": "企业客户在尝试登录时遇到身份验证失败或长时间无响应。",
+      "technical_characteristics": "由于SSO服务的负载均衡器配置错误，导致部分请求被分配到一个性能不足的节点上，造成高延迟和超时现象。其他依赖系统运行正常，但整体用户体验受到严重影响。"
+    },
+    "incident_time_range": {
+      "start_time": "2023-11-01T14:00:00",
+      "end_time": "2023-11-01T14:30:00",
+      "duration": "30分钟",
+      "mttr": "30分钟（因需要重新配置负载均衡策略）"
+    },
+    "business_impact": {
+      "operational_impact": "企业客户无法顺利登录系统，可能中断其业务操作流程。",
+      "financial_impact": "可能导致客户流失、投诉增加以及潜在赔偿要求。",
+      "regulatory_impact": "如果影响范围较大，可能引起监管机构的关注，并需提交事件报告。"
+    },
+    "recommended_actions": {
+      "initial_analysis": "检查SSO服务的负载均衡器配置；确认各节点的资源利用率是否合理；分析相关日志以定位具体瓶颈。",
+      "network_analysis": "验证网络连通性及延迟情况，确保没有额外的网络层干扰。",
+      "application_analysis": "审查API响应时间分布、服务器资源使用情况以及数据库连接池状态，排查是否存在应用层问题。",
+      "client_analysis": "收集企业客户的浏览器控制台日志和操作行为记录，分析是否存在客户端兼容性或其他问题。"
+    },
+    "id": "091ebf0f-b9b0-49d7-bbf6-1114bd8a0a6f"
+  },
+  "id": "a8f9c3d5-b7e2-41f6-8b9a-2c3e4d5f678g"
+}

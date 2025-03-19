@@ -1,0 +1,92 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Throughput (Requests per Second)",
+      "metric_type": "gauge",
+      "normal_range": "500-1000 req/sec",
+      "unit": "second",
+      "dimensional_labels": "service=支付业务, url=/payment-gateway, ip=192.168.1.1",
+      "statistical_characteristics": "no periodic fluctuation, noisy",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-15T14:00:00Z - 2023-10-15T14:12:00Z",
+      "correlation_with_other_metrics": "Correlates with increased Error Rates and reduced Service Availability"
+    },
+    {
+      "metric_name": "Error Rates",
+      "metric_type": "counter",
+      "normal_range": "0-5%",
+      "unit": "minute",
+      "dimensional_labels": "service=安全认证服务, pod=auth-service-pod-1",
+      "statistical_characteristics": "no periodic fluctuation, noisy",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-15T14:02:00Z - 2023-10-15T14:05:00Z",
+      "correlation_with_other_metrics": "Correlates with a sudden increase in Authentication Success/Failure Rates and decreased Throughput"
+    },
+    {
+      "metric_name": "Service Availability",
+      "metric_type": "gauge",
+      "normal_range": "99.9-100%",
+      "unit": "hour",
+      "dimensional_labels": "service=三方支付网关, url=/third-party-payment",
+      "statistical_characteristics": "no periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-15T14:05:00Z - 2023-10-15T14:07:00Z",
+      "correlation_with_other_metrics": "Correlates with high Pod Restart Counts and increased Container Restarts"
+    },
+    {
+      "metric_name": "Pod Restart Counts",
+      "metric_type": "counter",
+      "normal_range": "0-2 restarts/min",
+      "unit": "minute",
+      "dimensional_labels": "pod=payment-gateway-pod-1, service=支付业务",
+      "statistical_characteristics": "no periodic fluctuation, noisy",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-15T14:05:00Z - 2023-10-15T14:07:00Z",
+      "correlation_with_other_metrics": "Correlates with downward spikes in Service Availability and Throughput"
+    },
+    {
+      "metric_name": "API Gateway Metrics",
+      "metric_type": "gauge",
+      "normal_range": "200-500ms",
+      "unit": "minute",
+      "dimensional_labels": "gateway=api-gateway-service, endpoint=/payment",
+      "statistical_characteristics": "no periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-15T14:00:00Z - 2023-10-15T14:12:00Z",
+      "correlation_with_other_metrics": "Correlates with increased Latency and Jitter metrics from Network Infrastructure"
+    },
+    {
+      "metric_name": "Latency",
+      "metric_type": "gauge",
+      "normal_range": "50-100ms",
+      "unit": "millisecond",
+      "dimensional_labels": "network_segment=internal, router=core-router-1",
+      "statistical_characteristics": "no periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "rapid rise followed by slow decline",
+      "time_frame": "2023-10-15T14:00:00Z - 2023-10-15T14:05:00Z",
+      "correlation_with_other_metrics": "Correlates with increased API Gateway Metrics and Error Rates"
+    },
+    {
+      "metric_name": "Authentication Success/Failure Rates",
+      "metric_type": "gauge",
+      "normal_range": "95-100% success rate",
+      "unit": "minute",
+      "dimensional_labels": "service=安全认证服务, pod=auth-service-pod-1",
+      "statistical_characteristics": "no periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-15T14:02:00Z - 2023-10-15T14:05:00Z",
+      "correlation_with_other_metrics": "Correlates with an upward spike in Error Rates and a drop in Throughput"
+    },
+    {
+      "metric_name": "Connection Counts",
+      "metric_type": "gauge",
+      "normal_range": "1000-1500 connections/sec",
+      "unit": "second",
+      "dimensional_labels": "service=三方支付网关, ip=192.168.1.2",
+      "statistical_characteristics": "sin periodic fluctuation, almost no noise",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-15T14:05:00Z - 2023-10-15T14:07:00Z",
+      "correlation_with_other_metrics": "Correlates with a wide downward spike in Service Availability and Throughput"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "metrics": [
+    {
+      "metric_name": "API Gateway Metrics",
+      "metric_type": "gauge",
+      "normal_range": "0-500ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=手机银行App, url=/login",
+      "statistical_characteristics": "no seasonal pattern, trend: increase during peak hours",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z",
+      "correlation_with_other_metrics": "correlated with increased 'Error Rates' and 'Backend Server Latency'"
+    },
+    {
+      "metric_name": "Error Rates (4xx, 5xx)",
+      "metric_type": "counter",
+      "normal_range": "0-1%",
+      "unit": "percentage",
+      "dimensional_labels": "service=手机银行App, url=/login",
+      "statistical_characteristics": "no seasonal pattern, trend: sudden increase during incident",
+      "abnormal_pattern_type": "sudden increase",
+      "time_frame": "2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z",
+      "correlation_with_other_metrics": "correlated with spikes in 'API Gateway Metrics' and 'Backend Server Latency'"
+    },
+    {
+      "metric_name": "Backend Server Latency",
+      "metric_type": "gauge",
+      "normal_range": "100-300ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=安全认证服务, pod=identity-auth-pod-*",
+      "statistical_characteristics": "sin periodic fluctuation, trend: continuous upward spike during incident",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z",
+      "correlation_with_other_metrics": "correlated with spikes in 'Error Rates' and delays in 'Configuration Management Service'"
+    },
+    {
+      "metric_name": "Configuration Management Service Sync Delay",
+      "metric_type": "gauge",
+      "normal_range": "0-5s",
+      "unit": "seconds",
+      "dimensional_labels": "service=配置管理服务, node=node-*",
+      "statistical_characteristics": "no seasonal pattern, trend: wide upward spike during incident",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z",
+      "correlation_with_other_metrics": "correlated with abnormal latency in 'Backend Server Latency' and errors in 'API Gateway Metrics'"
+    },
+    {
+      "metric_name": "Load Balancer Metrics",
+      "metric_type": "gauge",
+      "normal_range": "50-70%",
+      "unit": "percent",
+      "dimensional_labels": "service=身份认证负载均衡器",
+      "statistical_characteristics": "no seasonal pattern, trend: downward spike followed by rapid rise",
+      "abnormal_pattern_type": "rapid decline followed by slow rise",
+      "time_frame": "2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z",
+      "correlation_with_other_metrics": "correlated with high error rates and backend server latency"
+    },
+    {
+      "metric_name": "Network Latency",
+      "metric_type": "gauge",
+      "normal_range": "20-50ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "network_segment=mobile-to-api-gateway",
+      "statistical_characteristics": "no seasonal pattern, trend: upward spike during incident",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z",
+      "correlation_with_other_metrics": "correlated with delays in API gateway metrics and backend server latency"
+    },
+    {
+      "metric_name": "Database Connection Pool Usage",
+      "metric_type": "gauge",
+      "normal_range": "30-60%",
+      "unit": "percent",
+      "dimensional_labels": "database=用户身份认证数据库",
+      "statistical_characteristics": "no seasonal pattern, trend: wide upward spike during incident",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-01T09:00:00Z - 2023-10-01T09:45:00Z",
+      "correlation_with_other_metrics": "correlated with spikes in 'Backend Server Latency' and configuration sync delays"
+    }
+  ]
+}

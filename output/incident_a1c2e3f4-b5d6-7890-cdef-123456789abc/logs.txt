@@ -1,0 +1,51 @@
+"Below are log message templates formatted in **log4j style**, including timestamps, hostnames, severity levels, and component tags. These logs represent the events surrounding the incident described in `###enriched_incident###` and align with the observed behavior.
+
+---
+
+### 1. Error Messages from Affected Components
+```plaintext
+2023-10-15 08:15:00Z [hostname-db01] ERROR [DatabaseService] - Connection pool exhausted: Maximum connections (100) reached. New requests will be blocked until resources are available.
+2023-10-15 08:20:00Z [hostname-regulatory01] ERROR [RegulatoryReportingSystem] - Task execution failed for job ID 12345 due to timeout while waiting for database response.
+2023-10-15 08:25:00Z [hostname-db01] ERROR [DatabaseService] - SQL query execution aborted after 60 seconds. Query: SELECT * FROM regulatory_data WHERE timestamp > '2023-10-14'.
+```
+
+---
+
+### 2. Warning Messages Indicating Developing Issues
+```plaintext
+2023-10-15 07:55:00Z [hostname-db01] WARN [DatabaseService] - Current active connections (85/100) approaching limit. Consider increasing connection pool size or optimizing queries.
+2023-10-15 08:05:00Z [hostname-regulatory01] WARN [RegulatoryReportingSystem] - Increased latency detected in task processing. Average task completion time has risen from 5s to 15s over the last 10 minutes.
+2023-10-15 08:10:00Z [hostname-db01] WARN [DatabaseService] - High number of idle connections (40) detected. Review connection lifecycle management policies.
+```
+
+---
+
+### 3. Info Messages Showing System State Changes
+```plaintext
+2023-10-15 08:00:00Z [hostname-db01] INFO [DatabaseService] - Database service started successfully. Initial connection pool size set to 50 out of max 100.
+2023-10-15 08:30:00Z [hostname-regulatory01] INFO [RegulatoryReportingSystem] - Regulatory reporting system paused all pending tasks due to upstream dependency issues.
+2023-10-15 09:00:00Z [hostname-db01] INFO [DatabaseService] - Manual intervention initiated: Terminated 20 idle connections to free up resources.
+2023-10-15 09:20:00Z [hostname-regulatory01] INFO [RegulatoryReportingSystem] - Restarting failed tasks following resolution of database connectivity issues.
+```
+
+---
+
+### 4. Debug Messages with Relevant Technical Details
+```plaintext
+2023-10-15 08:02:00Z [hostname-db01] DEBUG [DatabaseService] - Connection request received. Active connections: 75, Idle connections: 10, Pending requests: 15.
+2023-10-15 08:17:00Z [hostname-regulatory01] DEBUG [RegulatoryReportingSystem] - Attempting to fetch data chunk #45678 from database table 'regulatory_data'. Estimated rows: 1000.
+2023-10-15 08:22:00Z [hostname-db01] DEBUG [DatabaseService] - Query execution plan generated for SELECT statement. Estimated cost: 1200 units.
+2023-10-15 08:45:00Z [hostname-db01] DEBUG [DatabaseService] - Adjusting connection pool configuration: Max connections increased from 100 to 150.
+2023-10-15 09:10:00Z [hostname-regulatory01] DEBUG [RegulatoryReportingSystem] - Re-executing task ID 12345 with retry count: 3. Previous failure reason: TimeoutException.
+```
+
+---
+
+### Notes on Log Formatting:
+1. **Timestamp**: All logs include an ISO 8601 timestamp (`YYYY-MM-DDTHH:mm:ssZ`) to ensure precise timing alignment.
+2. **Hostname**: Each log specifies the hostname of the affected system (e.g., `hostname-db01`, `hostname-regulatory01`).
+3. **Severity Levels**: Logs use standard severity levels (`ERROR`, `WARN`, `INFO`, `DEBUG`) to indicate the importance of each message.
+4. **Component Tags**: Logs are tagged with relevant components (`DatabaseService`, `RegulatoryReportingSystem`) to clarify the source of the issue.
+5. **Technical Context**: Debug messages provide detailed technical insights, such as query plans, connection counts, and retry attempts.
+
+These templates can be used to simulate or analyze similar incidents in the future, aiding in both troubleshooting and preventive measures."

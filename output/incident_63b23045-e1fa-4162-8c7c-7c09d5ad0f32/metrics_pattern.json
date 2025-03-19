@@ -1,0 +1,81 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Request Rates",
+      "type": "gauge",
+      "normal_range": "100-500 requests per minute",
+      "unit": "minute",
+      "dimensional_labels": "service=门户网站",
+      "statistical_characteristics": "seasonal fluctuation with periodic peaks during high traffic hours",
+      "abnormal_pattern_type": "downward spike followed by slow rise",
+      "time_frame": "2023-10-05T10:00:00Z - 2023-10-05T10:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased response times and backend server latency."
+    },
+    {
+      "metric_name": "Response Times",
+      "type": "gauge",
+      "normal_range": "200-800 milliseconds",
+      "unit": "millisecond",
+      "dimensional_labels": "service=门户网站",
+      "statistical_characteristics": "no significant seasonal fluctuations, but occasional spikes during peak load",
+      "abnormal_pattern_type": "upward spike followed by slow decline",
+      "time_frame": "2023-10-05T10:00:00Z - 2023-10-05T10:45:00Z",
+      "correlation_with_other_metrics": "Correlates with CDN cache misses and higher origin server load."
+    },
+    {
+      "metric_name": "Cache Hit/Miss Rates",
+      "type": "gauge",
+      "normal_range": "90-95% hit rate",
+      "unit": "minute",
+      "dimensional_labels": "service=CDN服务",
+      "statistical_characteristics": "steady trend with minimal noise",
+      "abnormal_pattern_type": "downward spike in hit rate",
+      "time_frame": "2023-10-05T10:00:00Z - 2023-10-05T10:45:00Z",
+      "correlation_with_other_metrics": "Directly impacts origin server load and response times."
+    },
+    {
+      "metric_name": "Backend Server Latency",
+      "type": "gauge",
+      "normal_range": "50-200 milliseconds",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=源站服务器",
+      "statistical_characteristics": "low noise with occasional upward spikes during high load",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-05T10:00:00Z - 2023-10-05T10:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased request rates and decreased cache hit rates."
+    },
+    {
+      "metric_name": "External Service Call Latency",
+      "type": "gauge",
+      "normal_range": "100-300 milliseconds",
+      "unit": "millisecond",
+      "dimensional_labels": "service=第三方支付网关",
+      "statistical_characteristics": "periodic fluctuations due to external service dependency",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-05T10:00:00Z - 2023-10-05T10:45:00Z",
+      "correlation_with_other_metrics": "Affects transaction completion times, especially on payment-related pages."
+    },
+    {
+      "metric_name": "Error Rates (4xx, 5xx)",
+      "type": "counter",
+      "normal_range": "0-2% of total requests",
+      "unit": "minute",
+      "dimensional_labels": "service=门户网站",
+      "statistical_characteristics": "sporadic increases during high traffic or misconfigurations",
+      "abnormal_pattern_type": "sudden increase",
+      "time_frame": "2023-10-05T10:00:00Z - 2023-10-05T10:45:00Z",
+      "correlation_with_other_metrics": "Linked to CDN misconfiguration and third-party service instability."
+    },
+    {
+      "metric_name": "CPU and Memory Usage",
+      "type": "gauge",
+      "normal_range": "40-70% CPU, 50-80% memory",
+      "unit": "minute",
+      "dimensional_labels": "service=源站服务器",
+      "statistical_characteristics": "sinusoidal pattern reflecting daily usage cycles",
+      "abnormal_pattern_type": "sudden increase followed by gradual decline",
+      "time_frame": "2023-10-05T10:00:00Z - 2023-10-05T10:45:00Z",
+      "correlation_with_other_metrics": "Correlates with increased backend server latency and cache miss rates."
+    }
+  ]
+}

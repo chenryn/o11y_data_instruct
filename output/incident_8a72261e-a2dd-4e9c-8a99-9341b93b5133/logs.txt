@@ -1,0 +1,49 @@
+"Below are the log message templates formatted in **log4j style**, including timestamps, hostnames, severity levels, and component tags. These logs cover error messages, warnings, info messages, and debug details related to the incident described.
+
+---
+
+### 1. **Error Messages from Affected Components**
+```plaintext
+2023-10-15T08:05:00Z [hostname=security-platform-prod-01] [ERROR] [component=å®å¨å¹³å°] [transaction_id=txn_123456789] ç¨æ·äº¤æè¯·æ±è¢«éè¯¯æ¦æªï¼è§¦ååæ¬ºè¯è§åï¼rule_id=FRD-4567ãè¯¦ç»ä¿¡æ¯ï¼ç¨æ·ID=user_987654321ï¼IP=192.168.1.100ï¼ç»ç«¯è®¾å¤ç±»å=iOSã
+2023-10-15T08:10:00Z [hostname=api-gateway-prod-02] [ERROR] [component=APIç½å³] [transaction_id=txn_987654321] å®å¨å¹³å°è¿åå¼å¸¸ååºï¼ç¶æç =403ï¼åå =è®¿é®åéãä¸æ¸¸æå¡è°ç¨å¤±è´¥ã
+2023-10-15T08:15:00Z [hostname=risk-management-prod-03] [ERROR] [component=é£é©ç®¡çæ¨¡å] [transaction_id=txn_112233445] æ¥æ¶å°å¤§éè¯¯æ¥è®°å½ï¼è§åæ´æ°åè¯¯å¤çæ¿å¢è³85%ã
+```
+
+---
+
+### 2. **Warning Messages Indicating Developing Issues**
+```plaintext
+2023-10-15T08:02:00Z [hostname=security-platform-prod-01] [WARN] [component=å®å¨å¹³å°] [rule_id=FRD-4567] æ£æµå°æ°è§åå¯è½å¯¼è´è¯¯æ¥ï¼å»ºè®®ç«å³éªè¯è§åé»è¾ã
+2023-10-15T08:07:00Z [hostname=anti-fraud-engine-prod-01] [WARN] [component=åæ¬ºè¯è§åå¼æ] [transaction_id=txn_123456789] é«é¢è§¦åè§åFRD-4567ï¼å¯è½å½±åæ­£å¸¸äº¤æå¤çã
+2023-10-15T08:12:00Z [hostname=user-center-prod-01] [WARN] [component=ç¨æ·ä¸­å¿] [user_id=user_987654321] ç¨æ·åé¦âè®¿é®åéâæç¤ºï¼å»ºè®®æ£æ¥å®å¨å¹³å°è§åéç½®ã
+```
+
+---
+
+### 3. **Info Messages Showing System State Changes**
+```plaintext
+2023-10-15T08:00:00Z [hostname=security-platform-prod-01] [INFO] [component=å®å¨å¹³å°] åæ¬ºè¯è§åæ´æ°å·²é¨ç½²ï¼æ°è§åID=FRD-4567ï¼çæ¬å·=v2.3.1ã
+2023-10-15T08:20:00Z [hostname=api-gateway-prod-02] [INFO] [component=APIç½å³] å®å¨å¹³å°è§ååæ»å®æï¼å½åçæ¬æ¢å¤è³v2.3.0ã
+2023-10-15T08:30:00Z [hostname=risk-management-prod-03] [INFO] [component=é£é©ç®¡çæ¨¡å] ç³»ç»æ¢å¤æ­£å¸¸è¿è¡ï¼è¯¯æ¥çéè³é¢ææ°´å¹³ï¼<1%ï¼ã
+```
+
+---
+
+### 4. **Debug Messages with Relevant Technical Details**
+```plaintext
+2023-10-15T08:01:00Z [hostname=security-platform-prod-01] [DEBUG] [component=å®å¨å¹³å°] [rule_id=FRD-4567] è§åé»è¾æ´æ°è¯¦æï¼æ°å¢æ¡ä»¶âç¨æ·è¡ä¸ºæ¨¡å¼å¹éåº¦ä½äºéå¼âï¼éå¼è®¾ç½®ä¸º0.7ã
+2023-10-15T08:03:00Z [hostname=anti-fraud-engine-prod-01] [DEBUG] [component=åæ¬ºè¯è§åå¼æ] [transaction_id=txn_123456789] è¯·æ±æ°æ®è§£æç»æï¼å­æ®µéç»æ£æµ=trueï¼å å¯æ å¿=trueï¼æ¥æºIP=192.168.1.100ã
+2023-10-15T08:25:00Z [hostname=security-platform-prod-01] [DEBUG] [component=å®å¨å¹³å°] åæ»æä½æ§è¡æåï¼æ§è§åID=FRD-1234ï¼çæ¬å·=v2.3.0ï¼æ ¡éªåå¸å¼å¹éã
+2023-10-15T08:40:00Z [hostname=user-center-prod-01] [DEBUG] [component=ç¨æ·ä¸­å¿] æ¶éåå½±åç¨æ·ç»ç«¯æ¥å¿ï¼ç»è®¡ç¬¬ä¸æ¹æä»¶ä½¿ç¨æåµï¼æä»¶Aå æ¯40%ï¼æä»¶Bå æ¯30%ï¼å¶ä»å æ¯30%ã
+```
+
+---
+
+### Explanation of Log Templates:
+1. **Timestamps**: All logs include precise timestamps to align with the incident timeline.
+2. **Hostnames**: Each log specifies the hostname of the affected system for traceability.
+3. **Severity Levels**: Logs are categorized into `ERROR`, `WARN`, `INFO`, and `DEBUG` based on their criticality.
+4. **Component Tags**: Logs are tagged with the specific system or module (`å®å¨å¹³å°`, `APIç½å³`, etc.) to identify the source.
+5. **Technical Details**: Debug logs provide granular information about rule updates, request parsing, and system behavior.
+
+These templates can be used to simulate or analyze logs during similar incidents in the future."

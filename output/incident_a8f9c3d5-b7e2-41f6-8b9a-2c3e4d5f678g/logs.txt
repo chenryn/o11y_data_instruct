@@ -1,0 +1,57 @@
+"Below are log message templates formatted in a `log4j` style, capturing the key aspects of the incident described in `###enriched_incident###` and aligned with the metrics patterns provided. Each template includes timestamps, hostnames, severity levels, and component tags.
+
+---
+
+### **1. Error Messages from Affected Components**
+These logs represent critical failures observed during the incident.
+
+```plaintext
+2023-11-01 14:05:00 [company-banking-api-gateway] ERROR [SSO,LoadBalancer] - SSOæå¡è´è½½åè¡¡å¨éç½®éè¯¯ï¼é¨åè¯·æ±è¢«åéå°æ§è½ä¸è¶³çèç¹ï¼å¯¼è´è¶æ¶ãè¯·æ±ID: abc12345, èç¹IP: 192.168.1.10.
+2023-11-01 14:10:00 [sso-service-node-03] ERROR [SSO,Authentication] - èº«ä»½éªè¯å¤±è´¥ï¼æ æ³å¤çæ¥èªç¨æ·ä¸­å¿çååºãéè¯¯ä»£ç : AUTH-408, ååºæ¶é´è¶åºéå¼(>5000ms).
+2023-11-01 14:15:00 [user-center-backend] ERROR [UserCenter,Database] - æ°æ®åºè¿æ¥æ± èå°½ï¼æå¤§è¿æ¥æ°è¾¾å°éå¶(100)ï¼åç»­è¯·æ±æéç­å¾ãå½±åèå´: å®å¨è®¤è¯æå¡è°ç¨ã
+```
+
+---
+
+### **2. Warning Messages Indicating Developing Issues**
+These logs highlight warnings that indicate potential problems leading up to the incident.
+
+```plaintext
+2023-11-01 13:55:00 [load-balancer-monitor] WARN [SSO,Performance] - æ£æµå°SSOæå¡èç¹192.168.1.10çCPUä½¿ç¨çæç»­é«äº90%ï¼å¯è½å½±åè¯·æ±å¤çè½åã
+2023-11-01 14:00:00 [api-gateway-monitor] WARN [APIGateway,Latency] - APIç½å³æ£æµå°SSOæå¡å¹³åååºæ¶é´ä»200msä¸åè³1500msï¼å»ºè®®ç«å³ææ¥ã
+2023-11-01 14:02:00 [security-auth-service] WARN [SecurityAuth,Timeout] - å®å¨è®¤è¯æå¡æ¶å°å¤ä¸ªè¶æ¶å¼å¸¸æ¥åï¼çä¼¼ä¸æ¸¸ä¾èµ(SSO)å­å¨å»¶è¿ã
+```
+
+---
+
+### **3. Info Messages Showing System State Changes**
+These logs document state changes or operational activities around the incident time.
+
+```plaintext
+2023-11-01 14:00:00 [company-banking-frontend] INFO [Frontend,SystemState] - å¬å¸ç½é¶åç«¯å¯å¨æ°ä¸è½®ä¼è¯ç®¡çå·æ°å¨æã
+2023-11-01 14:10:00 [sso-admin-console] INFO [SSO,Configuration] - ç®¡çåå°è¯æ´æ°è´è½½åè¡¡å¨éç½®ï¼æ°ç­ç¥å°æªçæã
+2023-11-01 14:30:00 [load-balancer-admin] INFO [SSO,Recovery] - è´è½½åè¡¡å¨éæ°éç½®å®æï¼æµéå·²åååå¸è³ææå¯ç¨èç¹ã
+```
+
+---
+
+### **4. Debug Messages with Relevant Technical Details**
+These logs provide detailed technical insights for troubleshooting purposes.
+
+```plaintext
+2023-11-01 14:01:00 [api-gateway-debug] DEBUG [APIGateway,RequestFlow] - è¯·æ±è·¯å¾:/login -> APIç½å³è½¬åè³SSOæå¡ï¼åå§è¯·æ±å¤´: {"Authorization":"Bearer xyz123", "Content-Type":"application/json"}.
+2023-11-01 14:05:00 [sso-service-debug] DEBUG [SSO,NodeHealth] - æ§è½ä¸è¶³èç¹(192.168.1.10)å¥åº·æ£æ¥ç»æ: CPU=95%, Memory=85%, DiskIO=70%.
+2023-11-01 14:10:00 [user-center-debug] DEBUG [UserCenter,DBPool] - å½åæ°æ®åºè¿æ¥æ± ç¶æ: ActiveConnections=98, IdleConnections=2, PendingRequests=15.
+2023-11-01 14:20:00 [security-auth-debug] DEBUG [SecurityAuth,TokenValidation] - å®å¨è®¤è¯æå¡æ¥æ¶å°æ æä»¤çè¯·æ±ï¼ä»¤çID: token_abcdefgï¼æ¥æºIP: 203.0.113.50.
+```
+
+---
+
+### **Log Message Summary**
+The above log messages cover:
+1. **Errors**: Highlighting specific failures such as authentication timeouts and resource exhaustion.
+2. **Warnings**: Providing early signals of performance degradation or impending issues.
+3. **Info**: Documenting system state transitions and recovery actions.
+4. **Debug**: Offering granular technical details for root cause analysis.
+
+This structured logging approach ensures comprehensive visibility into the incident lifecycle while adhering to standard logging practices."

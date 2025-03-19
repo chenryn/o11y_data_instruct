@@ -1,0 +1,59 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Memory Usage",
+      "metric_type": "gauge",
+      "normal_range": "0-80%",
+      "unit": "percent",
+      "dimensional_labels": "service=data_processing_engine",
+      "statistical_characteristics": "no periodic fluctuation, increase trend, almost no noise",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-15T10:00:00Z - 2023-10-15T11:30:00Z",
+      "correlation_with_other_metrics": "Garbage Collection Metrics shows a downward spike during the same timeframe."
+    },
+    {
+      "metric_name": "Garbage Collection Metrics",
+      "metric_type": "counter",
+      "normal_range": "0-5s",
+      "unit": "second",
+      "dimensional_labels": "service=data_processing_engine",
+      "statistical_characteristics": "no periodic fluctuation, decrease trend, almost no noise",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-15T10:00:00Z - 2023-10-15T11:30:00Z",
+      "correlation_with_other_metrics": "Memory Usage shows a continuous upward spike during the same timeframe."
+    },
+    {
+      "metric_name": "Transaction Response Times",
+      "metric_type": "gauge",
+      "normal_range": "0-2000ms",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=data_processing_engine",
+      "statistical_characteristics": "no periodic fluctuation, increase trend, almost no noise",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-15T10:00:00Z - 2023-10-15T11:30:00Z",
+      "correlation_with_other_metrics": "Error Rates show an upward spike during the same timeframe."
+    },
+    {
+      "metric_name": "Error Rates",
+      "metric_type": "counter",
+      "normal_range": "0-1%",
+      "unit": "percentage",
+      "dimensional_labels": "service=data_processing_engine",
+      "statistical_characteristics": "no periodic fluctuation, increase trend, almost no noise",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-15T10:00:00Z - 2023-10-15T11:30:00Z",
+      "correlation_with_other_metrics": "Transaction Response Times shows an upward spike during the same timeframe."
+    },
+    {
+      "metric_name": "Throughput",
+      "metric_type": "gauge",
+      "normal_range": "100-200 requests/second",
+      "unit": "requests per second",
+      "dimensional_labels": "service=data_processing_engine",
+      "statistical_characteristics": "no periodic fluctuation, decrease trend, almost no noise",
+      "abnormal_pattern_type": "downward spike",
+      "time_frame": "2023-10-15T10:00:00Z - 2023-10-15T11:30:00Z",
+      "correlation_with_other_metrics": "Transaction Response Times and Error Rates both show upward spikes during the same timeframe."
+    }
+  ]
+}

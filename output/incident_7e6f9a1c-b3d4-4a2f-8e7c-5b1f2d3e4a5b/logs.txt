@@ -1,0 +1,52 @@
+"Below are log message templates formatted in a log4j-style format, capturing the key aspects of the incident. These logs include error messages, warnings, informational updates, and debug details from the affected components during the incident time range.
+
+---
+
+### **Error Messages**
+```log
+2023-10-20 10:02:35Z [hostname=payment-gateway-01] [severity=ERROR] [component=æ¯ä»ä¸å¡åç«¯] Failed to process payment request due to timeout while communicating with APIç½å³. Error: "Request timed out after 5000ms."
+2023-10-20 10:03:12Z [hostname=api-gateway-02] [severity=ERROR] [component=APIç½å³] High latency detected for downstream service 'ç¼å­æå¡'. Response time exceeded threshold (2000ms). Error: "Upstream connection pool exhausted."
+2023-10-20 10:05:47Z [hostname=core-system-db-03] [severity=ERROR] [component=æ ¸å¿ç³»ç»æ¥å£] Database query execution failed due to resource contention. Query: "SELECT * FROM transactions WHERE user_id = ?". Error: "Lock wait timeout exceeded."
+2023-10-20 10:08:22Z [hostname=cache-service-04] [severity=ERROR] [component=ç¼å­æå¡] Cache miss rate spiked to 85%. Requests bypassing cache overwhelmed backend systems. Error: "Cache invalidation policy triggered excessively."
+```
+
+---
+
+### **Warning Messages**
+```log
+2023-10-20 09:58:15Z [hostname=payment-gateway-01] [severity=WARN] [component=æ¯ä»ä¸å¡åç«¯] Increased response times observed for payment requests. Average latency rose from 300ms to 1200ms.
+2023-10-20 10:01:45Z [hostname=api-gateway-02] [severity=WARN] [component=APIç½å³] Connection pool utilization at 90%. Potential risk of exhaustion if traffic continues to increase.
+2023-10-20 10:04:10Z [hostname=cache-service-04] [severity=WARN] [component=ç¼å­æå¡] Cache hit ratio dropped below acceptable threshold (60%). Current hit rate: 45%.
+2023-10-20 10:10:30Z [hostname=core-system-db-03] [severity=WARN] [component=æ ¸å¿ç³»ç»æ¥å£] CPU usage on database server reached 85%. Risk of degraded performance under sustained load.
+```
+
+---
+
+### **Info Messages**
+```log
+2023-10-20 09:55:00Z [hostname=payment-gateway-01] [severity=INFO] [component=æ¯ä»ä¸å¡åç«¯] System initialized successfully. Ready to handle incoming payment requests.
+2023-10-20 10:06:15Z [hostname=api-gateway-02] [severity=INFO] [component=APIç½å³] Traffic routing adjusted to prioritize high-priority payment transactions.
+2023-10-20 10:12:00Z [hostname=cache-service-04] [severity=INFO] [component=ç¼å­æå¡] Temporary capacity increase applied. New memory allocation: 8GB.
+2023-10-20 10:14:30Z [hostname=core-system-db-03] [severity=INFO] [component=æ ¸å¿ç³»ç»æ¥å£] Load balancing enabled across secondary replicas to distribute read queries.
+```
+
+---
+
+### **Debug Messages**
+```log
+2023-10-20 09:59:00Z [hostname=payment-gateway-01] [severity=DEBUG] [component=æ¯ä»ä¸å¡åç«¯] Processing payment request ID: txn_12345. Request payload size: 2KB.
+2023-10-20 10:02:00Z [hostname=api-gateway-02] [severity=DEBUG] [component=APIç½å³] Forwarding request to ç¼å­æå¡. Endpoint: /v1/cache/get?key=user_profile_67890.
+2023-10-20 10:07:00Z [hostname=cache-service-04] [severity=DEBUG] [component=ç¼å­æå¡] Cache entry invalidated for key: user_profile_67890. Reason: TTL expired.
+2023-10-20 10:11:00Z [hostname=core-system-db-03] [severity=DEBUG] [component=æ ¸å¿ç³»ç»æ¥å£] Executing SQL query: "INSERT INTO transaction_logs (...) VALUES (...)".
+2023-10-20 10:13:00Z [hostname=account-management-05] [severity=DEBUG] [component=è´¦ç®¡ä¸­å¿] Updating account balance for user ID: 12345. New balance: $1500.
+```
+
+---
+
+### Explanation of Log Templates:
+1. **Error Messages**: Highlight critical failures that directly impacted the system's ability to process payments.
+2. **Warning Messages**: Indicate developing issues such as resource exhaustion or degraded performance metrics.
+3. **Info Messages**: Provide context about system state changes, such as capacity adjustments or load balancing activations.
+4. **Debug Messages**: Include granular technical details useful for root cause analysis, such as specific request IDs, payloads, and SQL queries.
+
+These logs can be used by engineers to correlate events, identify bottlenecks, and implement both immediate mitigations and long-term solutions."

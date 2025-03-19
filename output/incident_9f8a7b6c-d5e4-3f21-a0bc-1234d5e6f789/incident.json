@@ -1,0 +1,28 @@
+{
+  "incident": {
+    "title": "手机银行App高峰期交易失败问题调查",
+    "affected_components": {
+      "primary_system": "手机银行App",
+      "dependent_systems": "支付网关",
+      "transaction_chain": "手机银行App前端 -> API网关 -> 支付服务 -> 支付负载均衡器"
+    },
+    "severity": "High",
+    "symptom_analysis": {
+      "observed_issues": "用户在业务高峰期进行支付或转账时，交易请求失败并返回错误提示。",
+      "technical_characteristics": "支付网关的缓存配置不当导致部分高频交易数据未命中缓存，增加了后端处理压力，最终引发超时。"
+    },
+    "incident_time_range": "2023-10-15T14:30:00Z - 2023-10-15T15:15:00Z",
+    "business_impact_assessment": {
+      "operational_impact": "客户无法完成支付或转账操作，影响核心金融业务流程。",
+      "customer_experience_impact": "客户对系统的可靠性产生质疑，可能降低信任度。",
+      "financial_impact": "直接导致交易量下降，并增加客服支持成本。"
+    },
+    "recommended_initial_analysis_actions": {
+      "network_analysis": "检查网络连接稳定性、支付服务节点间的延迟及丢包率。",
+      "application_analysis": "分析支付服务接口响应时间分布、缓存命中率、数据库查询性能以及资源利用率。",
+      "client_analysis": "收集移动终端运行日志，重点关注交易失败场景下的用户行为和设备状态。"
+    },
+    "id": "53daadbd-6a16-47f0-b3ad-baa670c97d54"
+  },
+  "id": "9f8a7b6c-d5e4-3f21-a0bc-1234d5e6f789"
+}

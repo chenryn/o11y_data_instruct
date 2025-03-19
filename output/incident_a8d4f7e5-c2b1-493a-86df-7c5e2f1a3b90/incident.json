@@ -1,0 +1,33 @@
+{
+  "incident": {
+    "title": "大数据平台数据处理引擎性能下降调查",
+    "affected_components": {
+      "primary_system": "大数据平台",
+      "dependent_systems": "安全认证, 账管中心, 核心系统, 用户中心",
+      "transaction_chain": "数据处理引擎, HDFS存储服务, 报表生成模块, 决策支持系统"
+    },
+    "severity": "High",
+    "symptom_analysis": {
+      "observed_issues": "数据处理任务延迟，报表生成缓慢，决策支持系统响应时间延长。",
+      "technical_characteristics": "由于内存泄漏问题导致数据处理引擎性能下降，未及时触发资源回收机制。HDFS存储服务和下游组件因此受到连锁影响，部分任务超时失败。"
+    },
+    "incident_time_range": {
+      "start_time": "2023-10-15T10:00:00Z",
+      "end_time": "2023-10-15T11:30:00Z",
+      "mttr": "90分钟"
+    },
+    "business_impact": {
+      "operational_impact": "关键任务处理效率降低，可能导致业务流程阻塞；报表生成延迟影响决策制定；用户体验显著下降。",
+      "financial_impact": "可能因延迟或错误的决策造成潜在收益损失；需要额外资源排查与修复性能问题。",
+      "reputation_impact": "客户及内部用户对系统性能的信任度进一步削弱。"
+    },
+    "recommended_actions": {
+      "initial_analysis": "检查数据处理引擎的日志以定位内存泄漏点；分析任务队列中的异常模式；确认资源配置是否合理。",
+      "root_cause_investigation": "评估数据处理引擎代码是否存在内存管理缺陷；审查集群资源分配策略；排查是否存在配置不当或依赖库版本冲突。",
+      "remediation_steps": "优化数据处理引擎的垃圾回收机制；增加资源监控告警规则；升级相关依赖库至稳定版本。",
+      "preventive_measures": "实施定期压力测试以发现潜在性能瓶颈；加强开发团队对内存管理最佳实践的培训；建立更严格的代码审查流程。"
+    },
+    "id": "ff355017-14b5-461d-8cde-833b50783ac6"
+  },
+  "id": "a8d4f7e5-c2b1-493a-86df-7c5e2f1a3b90"
+}

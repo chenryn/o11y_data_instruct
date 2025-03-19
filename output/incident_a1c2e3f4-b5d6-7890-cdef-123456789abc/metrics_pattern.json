@@ -1,0 +1,59 @@
+{
+  "metrics": [
+    {
+      "metric_name": "Active Sessions",
+      "type": "gauge",
+      "normal_range": "0-50 sessions",
+      "unit": "minute",
+      "dimensional_labels": "service=数据库服务",
+      "statistical_characteristics": "no periodic fluctuation, increase during business peak hours",
+      "abnormal_pattern_type": "upward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T09:30:00Z",
+      "correlation_with_other_metrics": "Correlates with 'Database Call Metrics per Service' and 'Request Latency' showing spikes during the same timeframe."
+    },
+    {
+      "metric_name": "Database Call Metrics per Service",
+      "type": "counter",
+      "normal_range": "0-200 calls per minute",
+      "unit": "second",
+      "dimensional_labels": "service=监管报送系统",
+      "statistical_characteristics": "no periodic fluctuation, steady increase during peak load times",
+      "abnormal_pattern_type": "downward spike followed by wide downward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T09:30:00Z",
+      "correlation_with_other_metrics": "Correlated with 'Active Sessions' where both metrics show abnormal behavior during the incident period."
+    },
+    {
+      "metric_name": "Request Latency",
+      "type": "gauge",
+      "normal_range": "200-500 milliseconds",
+      "unit": "milliseconds",
+      "dimensional_labels": "service=监管报送系统",
+      "statistical_characteristics": "no periodic fluctuation, slight increase during peak load",
+      "abnormal_pattern_type": "continuous upward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T09:30:00Z",
+      "correlation_with_other_metrics": "Correlates with 'Error Rates (4xx, 5xx)' and 'Throughput (Requests per Second)', which also show significant changes during the incident."
+    },
+    {
+      "metric_name": "Error Rates (4xx, 5xx)",
+      "type": "counter",
+      "normal_range": "0-5 errors per minute",
+      "unit": "minute",
+      "dimensional_labels": "service=监管报送系统",
+      "statistical_characteristics": "noisy, sudden increases during high traffic periods",
+      "abnormal_pattern_type": "wide upward spike",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T09:30:00Z",
+      "correlation_with_other_metrics": "Correlates with 'Request Latency' and 'Throughput (Requests per Second)' showing similar abnormal patterns."
+    },
+    {
+      "metric_name": "Throughput (Requests per Second)",
+      "type": "gauge",
+      "normal_range": "50-100 requests per second",
+      "unit": "second",
+      "dimensional_labels": "service=监管报送系统",
+      "statistical_characteristics": "sin periodic fluctuation during normal operations",
+      "abnormal_pattern_type": "downward spike followed by slow decline",
+      "time_frame": "2023-10-15T08:00:00Z - 2023-10-15T09:30:00Z",
+      "correlation_with_other_metrics": "Correlates with 'Request Latency' and 'Error Rates (4xx, 5xx)' showing a decrease in throughput during the incident."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "incident": {
+    "title": "公司网银转账功能不可用问题调查",
+    "affected_components": {
+      "primary_system": "公司网银",
+      "dependent_systems": "二代支付, 安全认证, 核心系统, 账管中心, SSO, 用户中心",
+      "transaction_chain": "公司网银前端 -> API网关 -> 安全认证服务 -> 二代支付接口 -> 核心系统接口"
+    },
+    "severity": "Critical",
+    "symptom_analysis": {
+      "observed_issues": "企业客户无法完成资金划拨，转账功能报错或超时。",
+      "technical_characteristics": "二代支付接口证书过期导致调用失败，相关交易链路中断。核心监控指标显示接口调用异常，但其他依赖系统运行正常。此外，API网关在处理部分请求时返回了误导性错误代码（HTTP 503），掩盖了实际的证书问题。",
+      "misleading_symptoms": "部分客户报告称其浏览器端提示'服务不可用'，这被误认为是网络层故障，而非证书相关的应用层问题。"
+    },
+    "incident_time_range": {
+      "start_time": "2023-10-15T09:15:00",
+      "end_time": "2023-10-15T09:45:00",
+      "duration": "30分钟",
+      "mttr": "30分钟（由于涉及证书更新操作）"
+    },
+    "business_impact": {
+      "operational_impact": "企业客户无法及时完成转账操作，可能影响其日常业务运营和资金流动性管理。",
+      "financial_impact": "潜在的客户投诉、声誉损失以及可能的赔偿要求。",
+      "regulatory_impact": "若涉及大额资金划拨延迟，可能触发监管关注或报告义务。"
+    },
+    "recommended_actions": {
+      "initial_analysis": "检查二代支付接口的证书状态及有效期；确认证书更新流程是否被正确执行；分析接口调用日志以定位具体失败原因。",
+      "network_analysis": "验证网络连通性及延迟情况，确保无额外网络层问题，并排除因负载均衡器配置错误导致的流量分配异常。",
+      "application_analysis": "审查API响应时间分布、服务器资源使用情况及数据库连接池状态；同时对API网关进行深入排查，识别为何生成误导性的HTTP 503错误。",
+      "client_analysis": "收集企业客户的操作日志，分析是否存在其他客户端侧的问题；向受影响客户提供临时解决方案，例如手动提交转账申请。"
+    },
+    "id": "04fe0868-46ae-4b06-83ff-166521d618dd"
+  },
+  "id": "4d7ee201-de4d-4780-a20c-4ba51596bf51"
+}
