@@ -1,11 +1,9 @@
 from openai_client import get_openai_client
-import json
-import os
 
 def generate_log_data(enriched_incident, metric_patterns):
     prompt = f"""
     For the incident ###enriched_incident### and generated metrics ###metric_patterns###, create log message 
-    templates that would appear around the incident time. Include:
+    that would appear around the incident time. Include:
     1. Error messages from affected components
     2. Warning messages indicating developing issues
     3. Info messages showing system state changes
