@@ -17,6 +17,12 @@ def enrich_incident_context(incident_data: Dict[str, Any]) -> Dict[str, Any]:
     Returns:
         Dict containing enriched incident context
     """
+    # 检查incident_data是否为列表，如果是，取第一个元素
+    if isinstance(incident_data, list):
+        if len(incident_data) > 0:
+            incident_data = incident_data[0]
+        else:
+            raise ValueError("Empty incident data list provided")
     # Load services list
     with open('config/services_list.json', 'r', encoding='utf-8') as file:
         services_list = json.load(file)
@@ -87,10 +93,10 @@ def enrich_incident_context(incident_data: Dict[str, Any]) -> Dict[str, Any]:
     prompt = f"""
     Please provide detailed context for the following incident:
     
-    Category: {incident_data['category']}
-    System: {incident_data['label']}
-    Issue: {incident_data['question']}
-    Background: {incident_data['reason']}
+    Category: {incident_data.get('category', 'Unknown')}
+    System: {incident_data.get('label', 'Unknown')}
+    Issue: {incident_data.get('question', 'Unknown')}
+    Background: {incident_data.get('reason', 'Unknown')}
     
     Please provide:
     1. Affected system components (select from the services list below, maintaining realistic dependency relationships)

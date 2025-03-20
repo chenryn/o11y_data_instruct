@@ -10,7 +10,7 @@ Leveraging the Evol Instruct method and the capabilities of Deepseek R1 inferenc
 - [x] 根因分析问题的 seed 冷启动
     Cold start seed for root cause analysis problems
 
-- [ ] 根因分析问题的 seed 从业内公开故障复盘文档热启动
+- [x] 根因分析问题的 seed 从业内公开故障复盘文档热启动
     Hot start seed for root cause analysis problems from publicly available industry incident postmortems
 
 - [ ] 考虑 self_instruct 方法，从 service_list 中生产更多问题，但要考虑是否会重复率过高(试了几次，10 个冷启动的质量过滤都不能 100% 通过)
