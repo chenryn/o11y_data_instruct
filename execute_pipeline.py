@@ -292,6 +292,6 @@ class PipelineExecutor:
 
 if __name__ == "__main__":
     executor = PipelineExecutor()
-    executor.run_pipeline('output')
+    # executor.run_pipeline('output')
     # 示例：从 init_rca_cot 步骤开始执行
-    # executor.run_pipeline('output', start_step='init_rca_cot')
+    executor.run_pipeline('output', start_step='generate_metric_data')

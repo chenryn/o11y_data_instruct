@@ -15,10 +15,17 @@ def generate_synthetic_data(metric_patterns):
         4. Only include data for the abnormal periods and an equal length of normal periods preceding them
         5. The function must return data in CSV format
         6. Use datetime objects or timestamps for time handling, avoid direct string manipulation of dates.
-        7. Do not call the function, simply define it.
-        8. When using pandas to_csv(), use lineterminator instead of line_terminator parameter.
+        7. After defining the function, add a line to call the function and assign its result to a variable named 'synthetic_data'.
+        8. When using pandas to_csv(), use lineterminator='\\n' with proper escape characters.
         9. When using pandas date_range, use 's' instead of 'S' for seconds frequency.
         10. Make sure to assign the result to a variable named 'synthetic_data' before returning.
+        11. When adding metadata as a comment at the top of the CSV, use proper escape characters for newlines (\\n).
+        12. When combining timestamps, ensure that the timestamps array and values array have exactly the same length.
+        13. Do not use timestamps_normal.union(timestamps_abnormal) as it may cause length mismatch. Instead, use np.concatenate for both timestamps and values.
+        14. When using pd.date_range, always check the length of the resulting array and ensure it matches your expected number of points. If using start and end parameters together, verify the resulting length or use periods parameter instead.
+        15. For abnormal periods, calculate the exact number of points needed and use periods parameter in pd.date_range instead of using start and end together.
+        16. Before concatenating arrays, print their lengths to verify they match your expectations.
+        17. After generating timestamps, explicitly verify that len(timestamps_normal) == len(normal_data) and len(timestamps_abnormal) == len(abnormal_data).
 
         ###CSV data Format Example###
         #metric=decision_latency_per_transaction,type=gauge,service=risk_management,url=/risk/decision

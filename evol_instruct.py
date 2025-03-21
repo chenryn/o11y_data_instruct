@@ -105,14 +105,22 @@ class EvolInstruct:
 
     def quality_filter_prompt(self, system_data):
         prompt = f"""
-        Evaluate the quality of this generated incident data based on:
+        Evaluate the quality of this generated incident data based on the following dimensions, scoring each from 1-5 (where 1 is poor and 5 is excellent):
         1. Realism of the incident
         2. Completeness of observability data
         3. Clarity of the analysis
         4. Educational value
         5. Technical accuracy
 
-        Output only 'remove' if any aspect scores below 3 in your internal evaluation, otherwise output 'keep'. Respond with exactly one lowercase word.
+        Return your evaluation as a JSON object with the following structure:
+        {{
+            "realism": <score>,
+            "completeness": <score>,
+            "clarity": <score>,
+            "educational_value": <score>,
+            "technical_accuracy": <score>,
+            "comments": "brief explanation of your evaluation"
+        }}
         
         ### Incident Data ###
         {system_data}
@@ -169,11 +177,123 @@ class EvolInstruct:
                 {'role': 'system', 'content': 'You are a helpful assistant.'},
                 {'role': 'user', 'content': self.quality_filter_prompt(system_data)}
             ],
-            max_tokens=10
+            response_format={"type": "json_object"},
+            max_tokens=500
         )
-        is_quality = response.choices[0].message.content.strip()
-        # 根据返回值判断是否保留该场景
-        return is_quality == "keep"
+        
+        try:
+            import json
+            import os
+            import time
+            from datetime import datetime
+            
+            # 确保响应内容不为空
+            content = response.choices[0].message.content.strip()
+            if not content:
+                raise ValueError("模型返回了空响应")
+                
+            # 解析JSON
+            scores = json.loads(content)
+            
+            # 验证评分字段是否存在并有效
+            required_fields = ['realism', 'completeness', 'clarity', 'educational_value', 'technical_accuracy']
+            missing_fields = [field for field in required_fields if field not in scores]
+            
+            if missing_fields:
+                print(f"警告: 评分结果缺少以下字段: {', '.join(missing_fields)}")
+            
+            # 确保评论字段存在，如果不存在则提供默认值
+            if 'comments' not in scores or not scores['comments']:
+                scores['comments'] = "未提供评论" if not missing_fields else f"评分不完整，缺少字段: {', '.join(missing_fields)}"
+            
+            # 打印评分结果
+            print("\n质量评估结果:")
+            print(f"真实性: {scores.get('realism', 0)}/5")
+            print(f"完整性: {scores.get('completeness', 0)}/5")
+            print(f"清晰度: {scores.get('clarity', 0)}/5")
+            print(f"教育价值: {scores.get('educational_value', 0)}/5")
+            print(f"技术准确性: {scores.get('technical_accuracy', 0)}/5")
+            print(f"评论: {scores.get('comments')}")
+            
+            # 计算平均分
+            score_values = [scores.get('realism', 0), 
+                          scores.get('completeness', 0),
+                          scores.get('clarity', 0),
+                          scores.get('educational_value', 0),
+                          scores.get('technical_accuracy', 0)]
+            
+            # 检查是否所有评分都为0，这可能表示解析问题
+            if all(score == 0 for score in score_values):
+                print("警告: 所有评分均为0，可能表示评分解析出现问题")
+                
+            avg_score = sum(score_values) / len(score_values)
+            print(f"平均分: {avg_score:.2f}/5")
+            
+            # 根据评分决定是否保留场景 - 如果任何维度低于3分，则过滤掉
+            is_quality = all(score >= 3 for score in score_values)
+            print(f"保留场景: {is_quality}\n")
+            
+            # 如果不保留场景，将场景内容保存到filtered_incidents目录
+            if not is_quality:
+                # 确保目录存在
+                filtered_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'output', 'filtered_incidents')
+                os.makedirs(filtered_dir, exist_ok=True)
+                
+                # 获取场景ID
+                incident_id = None
+                if isinstance(system_data, dict):
+                    if 'id' in system_data:
+                        incident_id = system_data['id']
+                    elif 'incident' in system_data and 'id' in system_data['incident']:
+                        incident_id = system_data['incident']['id']
+                
+                if not incident_id:
+                    incident_id = str(uuid.uuid4())
+                
+                # 创建时间戳
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                
+                # 保存场景内容
+                filename = f"incident_{incident_id}_{timestamp}.json"
+                filepath = os.path.join(filtered_dir, filename)
+                
+                # 添加评分信息到场景数据
+                output_data = {
+                    "incident_data": system_data,
+                    "quality_scores": {
+                        "realism": scores.get('realism', 0),
+                        "completeness": scores.get('completeness', 0),
+                        "clarity": scores.get('clarity', 0),
+                        "educational_value": scores.get('educational_value', 0),
+                        "technical_accuracy": scores.get('technical_accuracy', 0),
+                        "avg_score": avg_score,
+                        "comments": scores.get('comments', "")
+                    }
+                }
+                
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    json.dump(output_data, f, indent=2, ensure_ascii=False)
+                
+                print(f"已保存不保留场景到: {filepath}")
+            
+            return is_quality
+        except json.JSONDecodeError as e:
+            print(f"JSON解析错误: {e}")
+            print(f"原始响应: {response.choices[0].message.content}")
+            print("评论: 模型返回的JSON格式不正确，无法解析评分结果")
+            # 出错时默认不保留
+            return False
+        except KeyError as e:
+            print(f"缺少关键字段: {e}")
+            print(f"原始响应: {response.choices[0].message.content}")
+            print("评论: 评分结果缺少必要字段")
+            return False
+        except Exception as e:
+            print(f"解析评分结果出错: {e}")
+            print(f"原始响应: {response.choices[0].message.content}")
+            print("评论: 处理评分结果时发生未知错误")
+            # 出错时默认不保留
+            return False
 
 # Example usage
 if __name__ == "__main__":
